@@ -1,3 +1,6 @@
+/*===UPDATE THE FONT FOR THE BODY OOF THE DOCUMENT ===*/
+document.body.style.fontFamily = "sans-serif"
+
 /*=====STEP 1 CRETAE AND ADD THE <MAIN> ELEMENT====*/
 const mainElement = document.createElement("main");
 document.body.appendChild(mainElement);
