@@ -17,12 +17,42 @@ const inputField = document.createElement("input");
 inputField.type = "text";
 inputField.id = "newTaskInput";
 inputField.placeholder = "New Task";
+inputField.style.marginBottom = "10px";
+inputField.style.width = "18%";
+inputField.style.padding = ".5rem";
+inputField.style.borderRadius = ".7rem";
 container.appendChild(inputField);
 
 //4. **Create a button to add tasks:**
 const addTaskBtn = document.createElement("button");
 addTaskBtn.textContent = "Add Task";
 addTaskBtn.onclick = () => app.addTask();
+addTaskBtn.style.backgroundColor = "#4CAF50";
+addTaskBtn.style.color = "whitesmoke";
+addTaskBtn.style.padding = ".4rem";
+addTaskBtn.style.width = "80px";
+addTaskBtn.style.borderRadius = ".7rem";
+addTaskBtn.style.marginLeft = ".4rem";
+addTaskBtn.style.backgroundColor = "#4CAF50";
+addTaskBtn.style.color = "whitesmoke";
+addTaskBtn.style.padding = ".4rem";
+addTaskBtn.style.width = "80px";
+addTaskBtn.style.borderRadius = ".7rem";
+addTaskBtn.style.marginLeft = ".4rem";
+addTaskBtn.style.cursor = "pointer";
+addTaskBtn.style.transition = "background-color 0.3s ease";
+
+addTaskBtn.addEventListener("mouseover", () => {
+    addTaskBtn.style.backgroundColor = "whitesmoke";
+    addTaskBtn.style.color = "#4CAF50";
+});
+
+addTaskBtn.addEventListener("mouseout", () => {
+    addTaskBtn.style.backgroundColor = "#4CAF50";
+    addTaskBtn.style.color = "whitesmoke";
+});
+
+addTaskBtn.style.cursor = "pointer";
 container.appendChild(addTaskBtn);
 //5  Create unordered List to display Task
 const taskList = document.createElement("ul");
@@ -47,7 +77,7 @@ class TaskList {
   constructor() {
     this.tasks = [];
   }
-  
+
   addTask(task) {
     this.tasks.push(task);
   }
@@ -73,8 +103,7 @@ class TaskList {
 }
 /*==========### Step 4: Initialize the App============*/
 const app = {
-
-    taskList: new TaskList(),
+  taskList: new TaskList(),
 
   addTask() {
     const inputField = document.getElementById("newTaskInput");
