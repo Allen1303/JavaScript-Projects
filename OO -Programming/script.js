@@ -1,7 +1,7 @@
 /*=====Step 1: CREATE THE HTML STRUCTURE DYNAMICALLY====*/
-document.body.style.fontFamily = "sans-serif"
-const container = document.createElement('div');
-container.className = 'container';
+document.body.style.fontFamily = "sans-serif";
+const container = document.createElement("div");
+container.className = "container";
 document.body.appendChild(container);
 
 /* 2.Create a heading (h1) for your Todo app:**
@@ -22,7 +22,7 @@ container.appendChild(inputField);
 //4. **Create a button to add tasks:**
 const addTaskBtn = document.createElement("button");
 addTaskBtn.textContent = "Add Task";
-addTaskBtn.onclick = addTask;
+addTaskBtn.onclick = () => app.addTask();
 container.appendChild(addTaskBtn);
 //5  Create unordered List to display Task
 const taskList = document.createElement("ul");
@@ -47,6 +47,7 @@ class TaskList {
   constructor() {
     this.tasks = [];
   }
+  
   addTask(task) {
     this.tasks.push(task);
   }
@@ -57,7 +58,7 @@ class TaskList {
     const taskListElement = document.getElementById("taskList");
     taskListElement.innerHTML = "";
 
-    this.tasks.foreach((task, index) => {
+    this.tasks.forEach((task, index) => {
       const ListItem = document.createElement("li");
       ListItem.textContent = task.description;
       ListItem.className = task.completed ? "completed" : "";
@@ -72,9 +73,12 @@ class TaskList {
 }
 /*==========### Step 4: Initialize the App============*/
 const app = {
+
+    taskList: new TaskList(),
+
   addTask() {
     const inputField = document.getElementById("newTaskInput");
-    const description = inputField.ariaValueMax.trim();
+    const description = inputField.value.trim();
     if (description !== "") {
       const task = new Task(description);
 
@@ -90,7 +94,7 @@ const app = {
   init() {
     const addTaskBtn = document.getElementById("addTaskBtn");
     addTaskBtn.addEventListener("click", () => this.addTask());
-    this.TaskList.renderTasks();
+    this.taskList.renderTasks();
   },
 };
 app.init();
