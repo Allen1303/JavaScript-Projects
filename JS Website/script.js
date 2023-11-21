@@ -18,60 +18,99 @@ Create a second div element using document.createElement('div').*/
 const secondDiv = document.createElement("div");
 nav.appendChild(secondDiv);
 
-//Step 4: Create the Unordered List (ul) for Navigation Links 
- //Create a ul element using document.createElement('ul').
+//Step 4: Create the Unordered List (ul) for Navigation Links
+//Create a ul element using document.createElement('ul').
 
 const ul = document.createElement("ul");
-ul.className = "nav-links ";
-linksContainer.appendChild(ul);
+ul.className = "nav-links";
+secondDiv.appendChild(ul);
 
 //Step 5: Create List Items (li) and Anchor Links (a) using for...of loop
-const linkData = ["About", "Experience", "Projects", "Contact"]
+const linkData = ["About", "Experience", "Projects", "Contact"];
 for (const linkText of linkData) {
-    
-    
+  const li = document.createElement("li");
+  const a = document.createElement("a");
+  a.href = `#${linkText.toLowerCase()}`;
+  a.textContent = linkText;
+  li.appendChild(a);
+  ul.appendChild(li);
 }
 
-
-
 //Step 6: Append All Elements to the Document
-document.body.appendChild(nav)
+document.body.appendChild(nav);
 // /*===================CSS  AND SASS STYLING======= ================ */
 
-// const styleElement = document.createElement("style");
-// styleElement.innerHTML = `
+const styleElement = document.createElement("style");
+const head = document.getElementsByTagName("head")[0];
+styleElement.innerHTML = `
+/* GENERAL */
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+}
 
-// `;
-// document.head.appendChild();
+body {
+  font-family: "Poppins", sans-serif;
+}
 
-// JavaScript Code for Dynamic HTML Creation
-// const nav = document.createElement('nav');
-// nav.id = 'desktop-nav';
-// document.body.appendChild(nav);
+html {
+  scroll-behavior: smooth;
+}
 
-// const logoContainer = document.createElement('div');
-// logoContainer.className = 'logo';
-// logoContainer.textContent = 'John Doe';
-// nav.appendChild(logoContainer);
+p {
+  color: rgb(85, 85, 85);
+}
 
-// const secondDiv = document.createElement('div');
-// nav.appendChild(secondDiv);
+/* TRANSITION */
 
-// const ul = document.createElement('ul');
-// ul.className = 'nav-links';
-// secondDiv.appendChild(ul);
+a,
+.btn {
+  transition: all 300ms ease;
+}
 
-// const linkData = ['About', 'Experience', 'Projects', 'Contact'];
+/* DESKTOP NAV */
 
-// for (const linkText of linkData) {
-//   const li = document.createElement('li');
-//   const a = document.createElement('a');
-//   a.href = `#${linkText.toLowerCase()}`;
-//   a.textContent = linkText;
-//   li.appendChild(a);
-//   ul.appendChild(li);
-// }
+nav,
+.nav-links {
+  display: flex;
+}
 
-// document.body.appendChild(nav);
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 17vh;
+}
+
+.nav-links {
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.3rem;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: rgb(181, 181, 181);
+}
+
+.logo {
+  font-size: 1.3rem;
+}
+
+.logo:hover {
+  cursor: default;
+}
+
+`;
+// const head = document.getElementsByTagName("head")[0];
+head.appendChild(styleElement);
