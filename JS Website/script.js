@@ -7,11 +7,10 @@ document.body.appendChild(nav);
 
 //Step 2: Create the Logo Container
 //Create a div element using document.createElement('div').
-
-const logoContainer = document.createElement("div");
-logoContainer.className = "logo";
-logoContainer.textContent = "John Doe";
-nav.appendChild(logoContainer);
+const logoElement = document.createElement("div");
+logoElement.className = "logo";
+logoElement.textContent = "John Doe";
+nav.appendChild(logoElement);
 
 /*Step 3: Create the Navigation Links Container
 Create a second div element using document.createElement('div').*/
@@ -20,7 +19,6 @@ nav.appendChild(secondDiv);
 
 //Step 4: Create the Unordered List (ul) for Navigation Links
 //Create a ul element using document.createElement('ul').
-
 const ul = document.createElement("ul");
 ul.className = "nav-links";
 secondDiv.appendChild(ul);
@@ -28,16 +26,17 @@ secondDiv.appendChild(ul);
 //Step 5: Create List Items (li) and Anchor Links (a) using for...of loop
 const linkData = ["About", "Experience", "Projects", "Contact"];
 for (const linkText of linkData) {
-  const li = document.createElement("li");
-  const a = document.createElement("a");
-  a.href = `#${linkText.toLowerCase()}`;
-  a.textContent = linkText;
-  li.appendChild(a);
-  ul.appendChild(li);
+  const liElement = document.createElement("li");
+  const aElement = document.createElement("a");
+  aElement.href = `#${linkText.toLowerCase()}`;
+  aElement.textContent = linkText;
+  liElement.appendChild(aElement);
+  ul.appendChild(liElement);
 }
+document.body.appendChild(nav);
 
 //Step 6: Append All Elements to the Document
-document.body.appendChild(nav);
+
 // /*===================CSS  AND SASS STYLING======= ================ */
 
 const styleElement = document.createElement("style");
@@ -45,7 +44,8 @@ const head = document.getElementsByTagName("head")[0];
 styleElement.innerHTML = `
 /* GENERAL */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+  @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Carter+One&family=Ephesis&family=Exo:ital,wght@0,100;0,700;0,800;0,900;1,500;1,700;1,800;1,900&family=Leckerli+One&family=Ma+Shan+Zheng&family=Marck+Script&family=Modak&family=Moirai+One&family=Monoton&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pacifico&family=Permanent+Marker&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,400;1,400&family=Quicksand:wght@300;400;500;600;700&family=Righteous&family=Sacramento&family=Tangerine:wght@700&family=Yuji+Boku&display=swap');
+
 
 * {
   margin: 0;
@@ -53,7 +53,7 @@ styleElement.innerHTML = `
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 html {
@@ -87,7 +87,8 @@ nav {
 .nav-links {
   gap: 2rem;
   list-style: none;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+  font-weight:400;
 }
 
 a {
@@ -104,7 +105,8 @@ a:hover {
 }
 
 .logo {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  font-weight:550;
 }
 
 .logo:hover {
