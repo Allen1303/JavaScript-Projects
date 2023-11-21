@@ -1,41 +1,77 @@
 //Step 1: Create the Main Navigation Container
 /*Create a new nav element using document.createElement('nav').
-Set the id attribute of the nav element to "desktop-nav" using element.id = "desktop-nav".
-Append the nav element to the document.body using document.body.appendChild(nav).*/
+body.appendChild(nav).*/
 const nav = document.createElement("nav");
 nav.id = "desktop-nav";
 document.body.appendChild(nav);
 
 //Step 2: Create the Logo Container
-/*Create a div element using document.createElement('div').
-Set the class attribute of the div element to "logo" using element.className = "logo".
-Set the text content of the div element to "John Doe" using element.textContent = "John Doe".
-Append the div element to the nav element.*/
+//Create a div element using document.createElement('div').
+
 const logoContainer = document.createElement("div");
 logoContainer.className = "logo";
 logoContainer.textContent = "John Doe";
 nav.appendChild(logoContainer);
 
 /*Step 3: Create the Navigation Links Container
-Create a second div element using document.createElement('div').
-Append this second div element to the nav element.*/
-const linksContainer = document.createElement("div");
-nav.appendChild(linksContainer);
+Create a second div element using document.createElement('div').*/
+const secondDiv = document.createElement("div");
+nav.appendChild(secondDiv);
 
-/**Step 4: Create the Unordered List (ul) for Navigation Links 
- Create a ul element using document.createElement('ul').
-Set the class attribute of the ul element to "nav-links" using element.className = "nav-links".
-Append the ul element to the second div element created in Step 3. 
-*/
+//Step 4: Create the Unordered List (ul) for Navigation Links 
+ //Create a ul element using document.createElement('ul').
+
 const ul = document.createElement("ul");
 ul.className = "nav-links ";
-linksContainer.append(ul);
+linksContainer.appendChild(ul);
 
-/*===================CSS  AND SASS STYLING======= ================ */
-const cssStyle = document.head;
-const style = document.createElement("style");
-style.innerHTML = `
+//Step 5: Create List Items (li) and Anchor Links (a) using for...of loop
+const linkData = ["About", "Experience", "Projects", "Contact"]
+for (const linkText of linkData) {
+    
+    
+}
 
 
 
-`
+//Step 6: Append All Elements to the Document
+document.body.appendChild(nav)
+// /*===================CSS  AND SASS STYLING======= ================ */
+
+// const styleElement = document.createElement("style");
+// styleElement.innerHTML = `
+
+
+
+// `;
+// document.head.appendChild();
+
+// JavaScript Code for Dynamic HTML Creation
+// const nav = document.createElement('nav');
+// nav.id = 'desktop-nav';
+// document.body.appendChild(nav);
+
+// const logoContainer = document.createElement('div');
+// logoContainer.className = 'logo';
+// logoContainer.textContent = 'John Doe';
+// nav.appendChild(logoContainer);
+
+// const secondDiv = document.createElement('div');
+// nav.appendChild(secondDiv);
+
+// const ul = document.createElement('ul');
+// ul.className = 'nav-links';
+// secondDiv.appendChild(ul);
+
+// const linkData = ['About', 'Experience', 'Projects', 'Contact'];
+
+// for (const linkText of linkData) {
+//   const li = document.createElement('li');
+//   const a = document.createElement('a');
+//   a.href = `#${linkText.toLowerCase()}`;
+//   a.textContent = linkText;
+//   li.appendChild(a);
+//   ul.appendChild(li);
+// }
+
+// document.body.appendChild(nav);
