@@ -47,9 +47,9 @@ hamburgerLogo.className = "logo";
 hamburgerLogo.textContent = "John Doe";
 
 //Create the Hamburger Menu Elemnent
-const hamnburgerMenu = document.createElement("div");
-hamnburgerMenu.className = "hamburger-menu";
-secondNav.appendChild(hamnburgerMenu);
+const hamburgerMenu = document.createElement("div");
+hamburgerMenu.className = "hamburger-menu";
+secondNav.appendChild(hamburgerMenu);
 
 // Create the Hamburger Icon Div with Onclick Feature
 const hamburgerIcon = document.createElement("div");
@@ -61,7 +61,7 @@ for (let i = 0; i < 3; i++) {
   const spanElement = document.createElement("span");
   hamburgerIcon.appendChild(spanElement);
 }
-hamnburgerMenu.appendChild(hamburgerIcon);
+hamburgerMenu.appendChild(hamburgerIcon);
 // /*===================CSS  AND SASS STYLING======= ================ */
 
 const styleElement = document.createElement("style");
