@@ -33,10 +33,35 @@ for (const linkText of linkData) {
   liElement.appendChild(aElement);
   ul.appendChild(liElement);
 }
+//Step 6: Append All Elements to the Document
 document.body.appendChild(nav);
 
-//Step 6: Append All Elements to the Document
+//=====BUILDING THE HAMBURGER NAV=======//
+const secondNav = document.createElement("nav");
+secondNav.id = "hamburger-nav";
+document.body.appendChild(secondNav);
 
+//STEP 2. Create the Hamburger Logo Element
+const hamburgerLogo = document.createElement("div");
+hamburgerLogo.className = "logo";
+hamburgerLogo.textContent = "John Doe";
+
+//Create the Hamburger Menu Elemnent
+const hamnburgerMenu = document.createElement("div");
+hamnburgerMenu.className = "hamburger-menu";
+secondNav.appendChild(hamnburgerMenu);
+
+// Create the Hamburger Icon Div with Onclick Feature
+const hamburgerIcon = document.createElement("div");
+hamburgerIcon.className = "hamburger-icon";
+hamburgerIcon.addEventListener("click", toggleMenu);
+
+//Create and Iterate the Span Elements
+for (let i = 0; i < 3; i++) {
+  const spanElement = document.createElement("span");
+  hamburgerIcon.appendChild(spanElement);
+}
+hamnburgerMenu.appendChild(hamburgerIcon);
 // /*===================CSS  AND SASS STYLING======= ================ */
 
 const styleElement = document.createElement("style");
