@@ -37,19 +37,19 @@ for (const linkText of linkData) {
 document.body.appendChild(nav);
 
 //=====BUILDING THE HAMBURGER NAV=======//
-const secondNav = document.createElement("nav");
-secondNav.id = "hamburger-nav";
-document.body.appendChild(secondNav);
+const hamburgerNav = document.createElement("nav");
+hamburgerNav.id = "hamburger-nav";
+document.body.appendChild(hamburgerNav);
 
 //STEP 2. Create the Hamburger Logo Element
-const hamburgerLogo = document.createElement("div");
-hamburgerLogo.className = "logo";
-hamburgerLogo.textContent = "John Doe";
+// const hamburgerLogo = document.createElement("div");
+//hamburgerLogo.className = "logo";
+//hamburgerLogo.textContent = "John Doe";
 
 //Create the Hamburger Menu Elemnent
 const hamburgerMenu = document.createElement("div");
 hamburgerMenu.className = "hamburger-menu";
-secondNav.appendChild(hamburgerMenu);
+hamburgerNav.appendChild(hamburgerMenu);
 
 // Create the Hamburger Icon Div with Onclick Feature
 const hamburgerIcon = document.createElement("div");
@@ -57,12 +57,58 @@ hamburgerIcon.className = "hamburger-icon";
 hamburgerIcon.addEventListener("click", toggleMenu);
 
 //Create and Iterate the Span Elements
-for (let i = 0; i < 3; i++) {
+for (let spanIndex = 0; spanIndex < 3; spanIndex++) {
   const spanElement = document.createElement("span");
   hamburgerIcon.appendChild(spanElement);
 }
 hamburgerMenu.appendChild(hamburgerIcon);
-// /*===================CSS  AND SASS STYLING======= ================ */
+
+//Create Menu Links Container:
+const menuLinks = document.createElement("div");
+menuLinks.className = "menu-links";
+
+//Create the Menu List Items and Anchor tags elemnts
+const menuList = document.createElement("ul");
+// Use the array method for all list items
+const menuItems = ["About", "Experience", "Projects", "Contact"];
+
+//Use a for of Loop for simplier code structure
+for (const listText of menuItems) {
+  //Create both "li" and "a" elements
+  const listItems = document.createElement("li");
+  const anchorTag = document.createElement("a");
+
+  anchorTag.href = `#${listText.toLowerCase()}`;
+  anchorTag.textContent = listText;
+
+  anchorTag.setAttribute(`#${listText.toLowerCase()}`);
+  //Create a Click an Event listener for the Toggle Menu
+  anchorTag.addEventListener("click", toggleMenu);
+
+  //Append the Elements
+  listItems.appendChild(anchorTag);
+  menuList.appendChild(listItems);
+}
+menuLinks.appendChild(menuList);
+
+function toggleMenu() {
+  const toggleList = document.querySelector(".menu-links");
+  toggleList.classList.toggle("visible");
+}
+// const hamburgerNav = document.getElementById("hamburger-nav");
+//Apend all the Hamburger Icon adn MenuLinks
+hamburgerNav.appendChild(hamburgerIcon);
+hamburgerNav.appendChild(menuLinks);
+
+/*===JAVASCRIPT FUNCTION FOR THE  TOGGLE MENU==*/
+// // function toggleMenuItems() {
+// //   const menu = document.querySelector(".menu-links");
+// //   const icon = document.querySelector(".hamburger-icon");
+// //   menu.classList.toggle("open");
+// //   icon.classList.toggle("open");
+// }
+
+// /*==========CSS  AND SASS STYLING========== */
 
 const styleElement = document.createElement("style");
 const head = document.getElementsByTagName("head")[0];
@@ -137,6 +183,87 @@ a:hover {
 .logo:hover {
   cursor: default;
 }
+
+/* HAMBURGER MENU */
+
+#hamburger-nav {
+  display: none;
+}
+
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.hamburger-icon span {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  width: fit-content;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+.menu-links.open {
+  max-height: 300px;
+}
+
+.hamburger-icon.open span:first-child {
+  transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+  transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+.hamburger-icon span:first-child {
+  opacity: 1;
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
 
 `;
 // const head = document.getElementsByTagName("head")[0];
