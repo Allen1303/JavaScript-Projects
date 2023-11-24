@@ -91,8 +91,8 @@ const profilePictureDiv = document.createElement("div");
 const TextDiv = document.createElement("div");
 profilePictureDiv.className = "section__pic-container";
 TextDiv.className = "section__text";
-profileSection.appendChild(TextDiv);
 profileSection.appendChild(profilePictureDiv);
+profileSection.appendChild(TextDiv);
 
 //C--Create the Profile Picture:elements
 const profileImg = document.createElement("img");
@@ -227,7 +227,9 @@ a:hover {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: white;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: fit-content;
   max-height: 0;
   overflow: hidden;
