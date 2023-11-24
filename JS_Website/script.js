@@ -233,11 +233,11 @@ a:hover {
     255,
     255,
     255,
-    0.3);
+    0.2);
   transition: all 0.3 ease-in-out;
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
-  
+  border-radius: 0.5rem;
 }
 
 .menu-links a {
@@ -245,7 +245,7 @@ a:hover {
   margin-top:10px;
   padding-top: 8px;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: black;
   text-decoration: none;
   transition: all 0.3 ease-in-out;
@@ -254,7 +254,6 @@ a:hover {
   color: gray;
   
 }
-
 
 .menu-links li {
   list-style: none;
