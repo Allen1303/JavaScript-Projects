@@ -115,7 +115,6 @@ TextDiv.appendChild(secondParagraph);
 
 //E--Create the Elements for the Button Container:
 
-
 /*==========CSS  AND SASS STYLING========== */
 
 // Step 1: Create a Style Element
@@ -226,14 +225,19 @@ a:hover {
 .menu-links {
   position: absolute;
   top: 100%;
-  right: 0;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  right: -100%;
   width: fit-content;
   max-height: 0;
   overflow: hidden;
+  background-color: rgb(
+    255,
+    255,
+    255,
+    0.3);
   transition: all 0.3 ease-in-out;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  
 }
 
 .menu-links a {
@@ -246,6 +250,11 @@ a:hover {
   text-decoration: none;
   transition: all 0.3 ease-in-out;
 }
+.menu-links a:hover {
+  color: gray;
+  
+}
+
 
 .menu-links li {
   list-style: none;
