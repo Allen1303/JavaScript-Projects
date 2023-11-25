@@ -96,7 +96,7 @@ profileSection.appendChild(TextDiv);
 
 //C--Create the Profile Picture:elements
 const profileImg = document.createElement("img");
-profileImg.src = "./assets/profile-pic.png";
+profileImg.src = "./assets/profile-pic1.png";
 profilePictureDiv.appendChild(profileImg);
 
 //D--Create Text Content:Elements
@@ -113,8 +113,29 @@ TextDiv.appendChild(firstParagraph);
 TextDiv.appendChild(h1TitleElement);
 TextDiv.appendChild(secondParagraph);
 
-//E--Create the Elements for the Button Container:
+//A--Create the Div for Button container
+const buttonContainerDiv = document.createElement("div");
+buttonContainerDiv.className = "btn-container";
+//B--// Create the "Download CV" Button and Download function
+const downloadButton = document.createElement("button");
+downloadButton.className = "btn btn-color-2";
+downloadButton.textContent = "Download CV";
+downloadButton.onclick = function () {
+  window.open("./assets/resume-example.pdf");
+};
+const contactButton = document.createElement("button");
+// C-- Create the contact button and Button click function
+contactButton.className = "btn btn-color-1";
+contactButton.textContent = "Contact Info";
+contactButton.onclick = function () {
+  location.href = "./#contact";
+};
+// D-- Append both Buttons to the button container
+buttonContainerDiv.appendChild(downloadButton);
+buttonContainerDiv.appendChild(contactButton);
 
+TextDiv.appendChild(buttonContainerDiv);
+// document.body.appendChild(profileSection);
 /*==========CSS  AND SASS STYLING========== */
 
 // Step 1: Create a Style Element
@@ -132,7 +153,7 @@ styleElement.innerHTML = `
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 html {
@@ -176,10 +197,10 @@ a {
 }
 
 a:hover {
-  color: grey;
+  color: lightblue;
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
+  text-decoration-color: lightblue;
 }
 
 .logo {
@@ -251,7 +272,7 @@ a:hover {
   transition: all 0.3 ease-in-out;
 }
 .menu-links a:hover {
-  color: gray;
+  color: lightblue;
   
 }
 
