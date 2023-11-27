@@ -135,8 +135,30 @@ buttonContainerDiv.appendChild(downloadButton);
 buttonContainerDiv.appendChild(contactButton);
 
 TextDiv.appendChild(buttonContainerDiv);
-// document.body.appendChild(profileSection);
-/*==========CSS  AND SASS STYLING========== */
+// E-- Create the scocial container
+const socialContainerDiv = document.createElement("div");
+socialContainerDiv.id = "socials-container";
+// Scocial Icons
+const linkedInIcon = document.createElement("img");
+linkedInIcon.src = "./assets/linkedin.png";
+linkedInIcon.className = "icon";
+linkedInIcon.onclick = function () {
+ window.open("https://linkedin.com/", "_blank");
+};
+
+const gitHubIcon = document.createElement("img");
+gitHubIcon.src = "./assets/github.png";
+gitHubIcon.className = "icon";
+gitHubIcon.onclick = function () {
+  window.open("https://github.com/", "_blank");
+};
+socialContainerDiv.appendChild(linkedInIcon);
+socialContainerDiv.appendChild(gitHubIcon);
+TextDiv.appendChild(socialContainerDiv);
+
+/*====STEP 9 CREATE THE ABOUT SECTION WITH INFO====*/
+
+/*============CSS  AND SASS STYLING============== */
 
 // Step 1: Create a Style Element
 const styleElement = document.createElement("style");
@@ -373,6 +395,11 @@ section {
 .icon {
   cursor: pointer;
   height: 2rem;
+ 
+}
+.icon:hover{
+ color: lightblue;
+
 }
 
 /* BUTTONS */
@@ -416,7 +443,7 @@ section {
 }
 
 .btn-color-2:hover {
-  border: rgb(255, 255, 255) 0.1rem solid;
+  border: lightblue 0.1rem solid;
 }
 
 .btn-container {
