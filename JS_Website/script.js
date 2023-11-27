@@ -143,7 +143,7 @@ const linkedInIcon = document.createElement("img");
 linkedInIcon.src = "./assets/linkedin.png";
 linkedInIcon.className = "icon";
 linkedInIcon.onclick = function () {
- window.open("https://linkedin.com/", "_blank");
+  window.open("https://linkedin.com/", "_blank");
 };
 
 const gitHubIcon = document.createElement("img");
@@ -157,6 +157,40 @@ socialContainerDiv.appendChild(gitHubIcon);
 TextDiv.appendChild(socialContainerDiv);
 
 /*====STEP 9 CREATE THE ABOUT SECTION WITH INFO====*/
+// A--Create the About Section Element
+const aboutSection = document.createElement("section");
+aboutSection.id = "about";
+
+// B-- Create the Paragraph element
+const aboutParagraph = document.createElement("p");
+aboutParagraph.className = "section__text__p1";
+aboutParagraph.textContent = "Get To Know More";
+
+// C--Create the H1 element
+const aboutH1 = document.createElement("h1");
+aboutH1.className = "title";
+aboutH1.textContent = "About Me";
+
+// D--Create the Main Div for Nested Divs
+const aboutFirstDiv = document.createElement("div");
+aboutFirstDiv.className = "section-container";
+
+// E--Create about pic  elements and content
+const aboutPicDiv = document.createElement("div");
+aboutPicDiv.className = "section__pic-container";
+// About Image Elements
+const aboutImg = document.createElement("img");
+aboutImg.className = "about-pic";
+aboutImg.src = "./assets/about-pic.png";
+aboutImg.alt = "Profile picture";
+aboutPicDiv.appendChild(aboutImg);
+
+const aboutTextDiv = document.createElement("div");
+
+aboutFirstDiv.appendChild(aboutPicDiv);
+aboutFirstDiv.appendChild(aboutTextDiv);
+
+// F-- Adding the Images
 
 /*============CSS  AND SASS STYLING============== */
 
