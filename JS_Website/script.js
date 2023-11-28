@@ -198,14 +198,14 @@ aboutDetailsDiv.className = "about-details-container";
 aboutSectionDiv.appendChild(aboutDetailsDiv);
 
 // H--Create the Divs and elements for About t Containers
-const aboutContainers = document.createElement("div");
-aboutContainers.className = "about-containers";
-aboutDetailsDiv.append(aboutContainers);
+const aboutContainersDiv = document.createElement("div");
+aboutContainersDiv.className = "about-containers";
+aboutDetailsDiv.append(aboutContainersDiv);
 
 // I--Create the details container for Experience
 const detailsContainer = document.createElement("div");
 detailsContainer.className = "details-container";
-aboutContainers.appendChild(detailsContainer);
+aboutContainersDiv.appendChild(detailsContainer);
 
 //J--Create image element for experience icon
 const experienceImg = document.createElement("img");
@@ -230,11 +230,12 @@ educationImg.alt = "Education icon";
 educationImg.className = "icon";
 
 const educationH3 = document.createElement("h3");
-experienceH3.innerText = "Education";
+educationH3.innerText = "Education";
 detailsContainer.appendChild(educationH3);
 
 const educationParagraph = document.createElement("p");
-educationParagraph.innerHTML ="B.Sc. Bachelors Degree<br />M.Sc. Masters Degre";
+educationParagraph.innerHTML =
+  "B.Sc. Bachelors Degree<br />M.Sc. Masters Degre";
 detailsContainer.appendChild(educationParagraph);
 
 /*============CSS  AND SASS STYLING============== */
@@ -340,10 +341,16 @@ a:hover {
 .hamburger-icon span {
   width: 100%;
   height: 2px;
+  font-weight: bold;
   background-color: black;
   transition: all 0.3 ease-in-out;
-}
 
+}
+.hamburger-icon span:hover{
+  color: lightblue;
+  transition: all 300ms ease ;
+  transform: scale(1.2);
+}
 .menu-links {
   position: absolute;
   top: 100%;
@@ -374,7 +381,7 @@ a:hover {
 }
 .menu-links a:hover {
   color: lightblue;
-  
+  transform: scale(1.2);
 }
 
 .menu-links li {
@@ -474,11 +481,11 @@ section {
 .icon {
   cursor: pointer;
   height: 2rem;
- 
+  transition: all 300ms ease;
 }
 .icon:hover{
- color: lightblue;
-
+color: lightblue;
+ transform: scale(1.2);
 }
 
 /* BUTTONS */
