@@ -165,32 +165,77 @@ aboutSection.id = "about";
 const aboutParagraph = document.createElement("p");
 aboutParagraph.className = "section__text__p1";
 aboutParagraph.textContent = "Get To Know More";
+aboutSection.appendChild(aboutParagraph);
 
 // C--Create the H1 element
 const aboutH1 = document.createElement("h1");
 aboutH1.className = "title";
 aboutH1.textContent = "About Me";
+aboutSection.appendChild(aboutH1);
 
 // D--Create the Main Div for Nested Divs
-const aboutFirstDiv = document.createElement("div");
-aboutFirstDiv.className = "section-container";
+const aboutSectionDiv = document.createElement("div");
+aboutSectionDiv.className = "section-container";
+aboutSection.appendChild(aboutSectionDiv);
 
 // E--Create about pic  elements and content
 const aboutPicDiv = document.createElement("div");
 aboutPicDiv.className = "section__pic-container";
-// About Image Elements
+const aboutTextDiv = document.createElement("div");
+aboutSectionDiv.appendChild(aboutPicDiv);
+aboutSectionDiv.appendChild(aboutTextDiv);
+
+// F--Create About Image Elements
 const aboutImg = document.createElement("img");
-aboutImg.className = "about-pic";
 aboutImg.src = "./assets/about-pic.png";
 aboutImg.alt = "Profile picture";
+aboutImg.className = "about-pic";
 aboutPicDiv.appendChild(aboutImg);
 
-const aboutTextDiv = document.createElement("div");
+// G-- Adding the about Details Element
+const aboutDetailsDiv = document.createElement("div");
+aboutDetailsDiv.className = "about-details-container";
+aboutSectionDiv.appendChild(aboutDetailsDiv);
 
-aboutFirstDiv.appendChild(aboutPicDiv);
-aboutFirstDiv.appendChild(aboutTextDiv);
+// H--Create the Divs and elements for About t Containers
+const aboutContainers = document.createElement("div");
+aboutContainers.className = "about-containers";
+aboutDetailsDiv.append(aboutContainers);
 
-// F-- Adding the Images
+// I--Create the details container for Experience
+const detailsContainer = document.createElement("div");
+detailsContainer.className = "details-container";
+aboutContainers.appendChild(detailsContainer);
+
+//J--Create image element for experience icon
+const experienceImg = document.createElement("img");
+experienceImg.src = "./assets/experience.png";
+experienceImg.alt = "Experience icon";
+experienceImg.className = "icon";
+detailsContainer.appendChild(experienceImg);
+
+// K--Create the H3 Header  and PTag the  Experience Element
+const experienceH3 = document.createElement("h3");
+experienceH3.innerText = "Experience";
+detailsContainer.appendChild(experienceH3);
+
+const experienceParagraph = document.createElement("p");
+experienceParagraph.innerHTML = "2+ years <br />Frontend Development";
+detailsContainer.appendChild(experienceParagraph);
+
+// M--Create the Education Element for the Details Container
+const educationImg = document.createElement("img");
+educationImg.src = "./assets/education.png";
+educationImg.alt = "Education icon";
+educationImg.className = "icon";
+
+const educationH3 = document.createElement("h3");
+experienceH3.innerText = "Education";
+detailsContainer.appendChild(educationH3);
+
+const educationParagraph = document.createElement("p");
+educationParagraph.innerHTML ="B.Sc. Bachelors Degree<br />M.Sc. Masters Degre";
+detailsContainer.appendChild(educationParagraph);
 
 /*============CSS  AND SASS STYLING============== */
 
