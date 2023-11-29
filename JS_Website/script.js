@@ -30,7 +30,7 @@ for (const liArrayItems of liArray) {
 document.body.appendChild(mainNav);
 
 //Step 6: Building the Hamburger Nav
-// A--Repeate the same process as creating mainNav Element
+
 const hamburgerNav = document.createElement("nav");
 hamburgerNav.id = "hamburger-nav";
 const hamburgerLogoDiv = document.createElement("div");
@@ -38,6 +38,7 @@ hamburgerLogoDiv.className = "logo";
 hamburgerLogoDiv.textContent = "John Doe";
 hamburgerNav.appendChild(hamburgerLogoDiv);
 // B-- Create Hamburger div, menu and append it
+
 const hamburgerMenuDiv = document.createElement("div");
 hamburgerMenuDiv.className = "hamburger-menu";
 hamburgerNav.appendChild(hamburgerMenuDiv);
@@ -54,8 +55,8 @@ for (let spanIndex = 0; spanIndex < 3; spanIndex++) {
 }
 
 // E-- Repeate step 4 to create menu-links, div and List
-const menuLinksDiv = document.createElement("div");
-menuLinksDiv.className = "menu-links";
+const menuLinksUl = document.createElement("div");
+menuLinksUl.className = "menu-links";
 
 for (const linksElement of liArray) {
   const menuLi = document.createElement("li");
@@ -63,9 +64,9 @@ for (const linksElement of liArray) {
   menuAnchorTag.href = `#${linksElement.toLowerCase()}`;
   menuAnchorTag.textContent = linksElement;
   menuLi.appendChild(menuAnchorTag);
-  menuLinksDiv.appendChild(menuLi);
+  menuLinksUl.appendChild(menuLi);
 }
-hamburgerMenuDiv.appendChild(menuLinksDiv);
+hamburgerMenuDiv.appendChild(menuLinksUl);
 document.body.appendChild(hamburgerNav);
 
 //==Step 7: Create the toggleMenu Function==//
@@ -88,11 +89,11 @@ document.body.appendChild(profileSection);
 
 // B--Create Div for Profile Pic and text
 const profilePictureDiv = document.createElement("div");
-const TextDiv = document.createElement("div");
+const textDiv = document.createElement("div");
 profilePictureDiv.className = "section__pic-container";
-TextDiv.className = "section__text";
+textDiv.className = "section__text";
 profileSection.appendChild(profilePictureDiv);
-profileSection.appendChild(TextDiv);
+profileSection.appendChild(textDiv);
 
 //C--Create the Profile Picture:elements
 const profileImg = document.createElement("img");
@@ -109,9 +110,9 @@ h1TitleElement.textContent = "John Doe";
 const secondParagraph = document.createElement("p");
 secondParagraph.className = "section__text__p2";
 secondParagraph.textContent = "Frontend Developer";
-TextDiv.appendChild(firstParagraph);
-TextDiv.appendChild(h1TitleElement);
-TextDiv.appendChild(secondParagraph);
+textDiv.appendChild(firstParagraph);
+textDiv.appendChild(h1TitleElement);
+textDiv.appendChild(secondParagraph);
 
 //A--Create the Div for Button container
 const buttonContainerDiv = document.createElement("div");
@@ -120,21 +121,21 @@ buttonContainerDiv.className = "btn-container";
 const downloadButton = document.createElement("button");
 downloadButton.className = "btn btn-color-2";
 downloadButton.textContent = "Download CV";
-downloadButton.onclick = function () {
+downloadButton.onClick = () => {
   window.open("./assets/resume-example.pdf");
 };
 const contactButton = document.createElement("button");
 // C-- Create the contact button and Button click function
 contactButton.className = "btn btn-color-1";
 contactButton.textContent = "Contact Info";
-contactButton.onclick = function () {
+contactButton.onclick = () => {
   location.href = "./#contact";
 };
 // D-- Append both Buttons to the button container
 buttonContainerDiv.appendChild(downloadButton);
 buttonContainerDiv.appendChild(contactButton);
 
-TextDiv.appendChild(buttonContainerDiv);
+textDiv.appendChild(buttonContainerDiv);
 // E-- Create the scocial container
 const socialContainerDiv = document.createElement("div");
 socialContainerDiv.id = "socials-container";
@@ -142,22 +143,23 @@ socialContainerDiv.id = "socials-container";
 const linkedInIcon = document.createElement("img");
 linkedInIcon.src = "./assets/linkedin.png";
 linkedInIcon.className = "icon";
-linkedInIcon.onclick = function () {
+linkedInIcon.onclick = () => {
   window.open("https://linkedin.com/", "_blank");
 };
 
 const gitHubIcon = document.createElement("img");
 gitHubIcon.src = "./assets/github.png";
 gitHubIcon.className = "icon";
-gitHubIcon.onclick = function () {
+gitHubIcon.onclick = () => {
   window.open("https://github.com/", "_blank");
 };
 socialContainerDiv.appendChild(linkedInIcon);
 socialContainerDiv.appendChild(gitHubIcon);
-TextDiv.appendChild(socialContainerDiv);
+
+textDiv.appendChild(socialContainerDiv);
 
 /*====STEP 9 CREATE THE ABOUT SECTION WITH INFO====*/
-// A--Create the About Section Element
+
 const aboutSection = document.createElement("section");
 aboutSection.id = "about";
 
@@ -193,14 +195,14 @@ aboutImg.className = "about-pic";
 aboutPicDiv.appendChild(aboutImg);
 
 // G-- Adding the about Details Element
-const aboutDetailsDiv = document.createElement("div");
-aboutDetailsDiv.className = "about-details-container";
-aboutSectionDiv.appendChild(aboutDetailsDiv);
+const aboutDetailsContainer = document.createElement("div");
+aboutDetailsContainer.className = "about-details-container";
+aboutSectionDiv.appendChild(aboutDetailsContainer);
 
 // H--Create the Divs and elements for About t Containers
 const aboutContainersDiv = document.createElement("div");
 aboutContainersDiv.className = "about-containers";
-aboutDetailsDiv.append(aboutContainersDiv);
+aboutDetailsContainer.append(aboutContainersDiv);
 
 // I--Create the details container for Experience
 const detailsContainer = document.createElement("div");
@@ -212,12 +214,13 @@ const experienceImg = document.createElement("img");
 experienceImg.src = "./assets/experience.png";
 experienceImg.alt = "Experience icon";
 experienceImg.className = "icon";
-detailsContainer.appendChild(experienceImg);
+
 
 // K--Create the H3 Header  and PTag the  Experience Element
 const experienceH3 = document.createElement("h3");
 experienceH3.innerText = "Experience";
-detailsContainer.appendChild(experienceH3);
+experienceImg.appendChild(experienceH3);
+detailsContainer.appendChild(experienceImg);
 
 const experienceParagraph = document.createElement("p");
 experienceParagraph.innerHTML = "2+ years <br />Frontend Development";
@@ -231,12 +234,36 @@ educationImg.className = "icon";
 
 const educationH3 = document.createElement("h3");
 educationH3.innerText = "Education";
-detailsContainer.appendChild(educationH3);
+educationImg.appendChild(educationH3);
+detailsContainer.appendChild(educationImg);
 
 const educationParagraph = document.createElement("p");
 educationParagraph.innerHTML =
   "B.Sc. Bachelors Degree<br />M.Sc. Masters Degre";
 detailsContainer.appendChild(educationParagraph);
+
+// N--Create The Text Div container Element
+
+const textContainerDiv = document.createElement("div");
+textContainerDiv.className = "text-container";
+
+const textParagraph = document.createElement("p");
+textParagraph.innerText =
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis reprehenderit et laborum, rem, dolore eum quod voluptate exercitationem nobis, nihil esse debitis maxime facere minus sint delectus velit in eos quo officiis explicabo deleniti dignissimos. Eligendi illum libero dolorum cum laboriosam corrupti quidem,reiciendis ea magnam? Nulla, impedit fuga!";
+textContainerDiv.appendChild(textParagraph);
+
+const arrowImg = document.createElement("img");
+arrowImg.src = "./assets/arrow.png";
+arrowImg.alt = "Arrow icon";
+arrowImg.className = "icon arrow";
+arrowImg.onclick = function () {
+  location.href = "./#experience";
+};
+// Aoppend the Arrow Img to the Text Container Div
+
+aboutTextDiv.appendChild(arrowImg);
+document.body.appendChild(aboutSection);
+aboutTextDiv.appendChild(textContainerDiv);
 
 /*============CSS  AND SASS STYLING============== */
 
