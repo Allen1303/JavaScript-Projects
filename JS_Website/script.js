@@ -215,15 +215,14 @@ experienceImg.src = "./assets/experience.png";
 experienceImg.alt = "Experience icon";
 experienceImg.className = "icon";
 
-
 // K--Create the H3 Header  and PTag the  Experience Element
 const experienceH3 = document.createElement("h3");
 experienceH3.innerText = "Experience";
-experienceImg.appendChild(experienceH3);
-detailsContainer.appendChild(experienceImg);
 
 const experienceParagraph = document.createElement("p");
 experienceParagraph.innerHTML = "2+ years <br />Frontend Development";
+detailsContainer.appendChild(experienceH3);
+detailsContainer.appendChild(experienceImg);
 detailsContainer.appendChild(experienceParagraph);
 
 // M--Create the Education Element for the Details Container
@@ -234,12 +233,13 @@ educationImg.className = "icon";
 
 const educationH3 = document.createElement("h3");
 educationH3.innerText = "Education";
-educationImg.appendChild(educationH3);
-detailsContainer.appendChild(educationImg);
 
 const educationParagraph = document.createElement("p");
 educationParagraph.innerHTML =
   "B.Sc. Bachelors Degree<br />M.Sc. Masters Degre";
+
+detailsContainer.appendChild(educationH3);
+detailsContainer.appendChild(educationImg);
 detailsContainer.appendChild(educationParagraph);
 
 // N--Create The Text Div container Element
@@ -258,12 +258,12 @@ arrowImg.alt = "Arrow icon";
 arrowImg.className = "icon arrow";
 arrowImg.onclick = function () {
   location.href = "./#experience";
+  aboutTextDiv.appendChild(arrowImg);
 };
 // Aoppend the Arrow Img to the Text Container Div
-
+aboutTextDiv.appendChild(textContainerDiv);
 aboutTextDiv.appendChild(arrowImg);
 document.body.appendChild(aboutSection);
-aboutTextDiv.appendChild(textContainerDiv);
 
 /*============CSS  AND SASS STYLING============== */
 
