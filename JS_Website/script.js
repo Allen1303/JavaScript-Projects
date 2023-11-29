@@ -221,9 +221,8 @@ experienceH3.innerText = "Experience";
 
 const experienceParagraph = document.createElement("p");
 experienceParagraph.innerHTML = "2+ years <br />Frontend Development";
-detailsContainer.appendChild(experienceH3);
-detailsContainer.appendChild(experienceImg);
-detailsContainer.appendChild(experienceParagraph);
+
+
 
 // M--Create the Education Element for the Details Container
 const educationImg = document.createElement("img");
@@ -238,10 +237,8 @@ const educationParagraph = document.createElement("p");
 educationParagraph.innerHTML =
   "B.Sc. Bachelors Degree<br />M.Sc. Masters Degre";
 
-detailsContainer.appendChild(educationH3);
-detailsContainer.appendChild(educationImg);
-detailsContainer.appendChild(educationParagraph);
 
+  document.body.appendChild(detailsContainer);
 // N--Create The Text Div container Element
 
 const textContainerDiv = document.createElement("div");
@@ -250,7 +247,7 @@ textContainerDiv.className = "text-container";
 const textParagraph = document.createElement("p");
 textParagraph.innerText =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis reprehenderit et laborum, rem, dolore eum quod voluptate exercitationem nobis, nihil esse debitis maxime facere minus sint delectus velit in eos quo officiis explicabo deleniti dignissimos. Eligendi illum libero dolorum cum laboriosam corrupti quidem,reiciendis ea magnam? Nulla, impedit fuga!";
-textContainerDiv.appendChild(textParagraph);
+aboutDetailsContainer.appendChild(textParagraph);
 
 const arrowImg = document.createElement("img");
 arrowImg.src = "./assets/arrow.png";
