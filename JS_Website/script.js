@@ -222,7 +222,9 @@ experienceH3.innerText = "Experience";
 const experienceParagraph = document.createElement("p");
 experienceParagraph.innerHTML = "2+ years <br />Frontend Development";
 
-
+detailsContainer.appendChild(experienceImg);
+detailsContainer.appendChild(experienceH3);
+detailsContainer.appendChild(experienceParagraph);
 
 // M--Create the Education Element for the Details Container
 const educationImg = document.createElement("img");
@@ -235,10 +237,14 @@ educationH3.innerText = "Education";
 
 const educationParagraph = document.createElement("p");
 educationParagraph.innerHTML =
-  "B.Sc. Bachelors Degree<br />M.Sc. Masters Degre";
+  "B.Sc. Bachelors Degree<br />M.Sc. Masters Degree";
 
+detailsContainer.appendChild(educationImg);
+detailsContainer.appendChild(educationH3);
+detailsContainer.appendChild(educationParagraph);
 
-  document.body.appendChild(detailsContainer);
+aboutContainersDiv.appendChild(detailsContainer);
+
 // N--Create The Text Div container Element
 
 const textContainerDiv = document.createElement("div");
@@ -255,11 +261,12 @@ arrowImg.alt = "Arrow icon";
 arrowImg.className = "icon arrow";
 arrowImg.onclick = function () {
   location.href = "./#experience";
-  aboutTextDiv.appendChild(arrowImg);
 };
-// Aoppend the Arrow Img to the Text Container Div
-aboutTextDiv.appendChild(textContainerDiv);
+// Append the Arrow Img to the Text Container Div
 aboutTextDiv.appendChild(arrowImg);
+
+aboutDetailsContainer.appendChild(textContainerDiv);
+// aboutSection.appendChild(arrowImg);
 document.body.appendChild(aboutSection);
 
 /*============CSS  AND SASS STYLING============== */
