@@ -208,6 +208,10 @@ aboutDetailsContainer.append(aboutContainersDiv);
 const detailsContainer = document.createElement("div");
 detailsContainer.className = "details-container";
 aboutContainersDiv.appendChild(detailsContainer);
+// Create the details Container for Education Element
+const detailsContainer2 = document.createElement("div");
+detailsContainer2.className = "details-container";
+aboutContainersDiv.appendChild(detailsContainer2);
 
 //J--Create image element for experience icon
 const experienceImg = document.createElement("img");
@@ -225,6 +229,7 @@ experienceParagraph.innerHTML = "2+ years <br />Frontend Development";
 detailsContainer.appendChild(experienceImg);
 detailsContainer.appendChild(experienceH3);
 detailsContainer.appendChild(experienceParagraph);
+aboutContainersDiv.appendChild(detailsContainer);
 
 // M--Create the Education Element for the Details Container
 const educationImg = document.createElement("img");
@@ -239,12 +244,12 @@ const educationParagraph = document.createElement("p");
 educationParagraph.innerHTML =
   "B.Sc. Bachelors Degree<br />M.Sc. Masters Degree";
 
-detailsContainer.appendChild(educationImg);
-detailsContainer.appendChild(educationH3);
-detailsContainer.appendChild(educationParagraph);
+detailsContainer2.appendChild(educationImg);
+detailsContainer2.appendChild(educationH3);
+detailsContainer2.appendChild(educationParagraph);
 
-aboutContainersDiv.appendChild(detailsContainer);
-
+aboutContainersDiv.appendChild(detailsContainer2);
+aboutDetailsContainer.append(aboutContainersDiv);
 // N--Create The Text Div container Element
 
 const textContainerDiv = document.createElement("div");
