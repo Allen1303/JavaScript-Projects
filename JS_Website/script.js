@@ -121,7 +121,7 @@ buttonContainerDiv.className = "btn-container";
 const downloadButton = document.createElement("button");
 downloadButton.className = "btn btn-color-2";
 downloadButton.textContent = "Download CV";
-downloadButton.onClick = () => {
+downloadButton.onclick = () => {
   window.open("./assets/resume-example.pdf");
 };
 const contactButton = document.createElement("button");
@@ -305,7 +305,7 @@ expDetailsContainer.appendChild(expAbout);
 
 //F--Craete and Add the Experience Details Container Div element
 const expDetails = document.createElement("div");
-expDetailsclassName = "details-container";
+expDetails.className = "details-container";
 expAbout.appendChildconst;
 
 // G--Create and add the H2 element
