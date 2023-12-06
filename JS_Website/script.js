@@ -353,6 +353,11 @@ const createExperienceArticle = (technologies) => {
 
   return articleElement;
 };
+// Iterate through the techStack array and append articles to the container
+techStack.forEach((technology) => {
+  const techArticle = createExperienceArticle(technology);
+  articleContainerDiv.appendChild(techArticle);
+});
 
 // Create the second Details Container Div
 const secondDetailsContainerDiv = document.createElement("div");
@@ -399,6 +404,11 @@ const createSecondExperienceArticle = (technologies2) => {
 
   return secondArticleElement;
 };
+// Iterate through the techStack2 array and append articles to the second container
+techStack2.forEach((technology) => {
+  const techArticle = createSecondExperienceArticle(technology);
+  articleContainerDiv2.appendChild(techArticle);
+});
 
 const secondArrowImg = document.createElement("img");
 secondArrowImg.src = "./assets/arrow.png";
@@ -406,14 +416,9 @@ secondArrowImg.alt = "Arrow icon";
 secondArrowImg.onclick = () => {
   location.href = "./#projects";
 };
-
 experienceSection.appendChild(secondArrowImg);
 
-
-
-
-
-// R--Second Details Container
+document.body.appendChild(experienceSection);
 
 /*============CSS  AND SASS STYLING============== */
 
