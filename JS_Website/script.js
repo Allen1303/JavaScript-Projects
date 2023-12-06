@@ -281,47 +281,46 @@ document.body.appendChild(aboutSection);
 const experienceSection = document.createElement("section");
 experienceSection.id = "experience";
 
-//B--Create and add the Paragraph Element
+// Create and add the Paragraph Element
 const pElement = document.createElement("p");
 pElement.className = "section__text__p1";
 pElement.textContent = "Explore My";
 experienceSection.appendChild(pElement);
 
-//C-- Craete and Add the H1 element
+// Create and Add the H1 element
 const h1Element = document.createElement("h1");
 h1Element.className = "title";
 h1Element.textContent = "Experience";
 experienceSection.appendChild(h1Element);
 
-//D-- Craete and Add the Experience Details Div element
-const expDetailsContainer = document.createElement("div");
-expDetailsContainer.className = "experience-details-container";
-experienceSection.appendChild(expDetailsContainer);
+// Create and Add the Experience Details Div element
+const experienceDetailsContainer = document.createElement("div");
+experienceDetailsContainer.className = "experience-details-container";
+experienceSection.appendChild(experienceDetailsContainer);
 
-//E--Craete and Add the About Containers Div element
-const expAbout = document.createElement("div");
-expAbout.className = "about-containers";
-expDetailsContainer.appendChild(expAbout);
+// Create and Add the About Containers Div element
+const experienceAbout = document.createElement("div");
+experienceAbout.className = "about-containers";
+experienceDetailsContainer.appendChild(experienceAbout);
 
-//F--Craete and Add the Experience Details Container Div element
-const expDetails = document.createElement("div");
-expDetails.className = "details-container";
-expAbout.appendChild(expDetails);
+// Create and Add the Experience Details Container Div element
+const detailsContainerDiv = document.createElement("div");
+detailsContainerDiv.className = "details-container";
+experienceAbout.appendChild(detailsContainerDiv);
 
-// G--Create and add the H2 element
-const expH2 = document.createElement("h2");
-expH2.className = "experience-sub-title";
-expH2.textContent = "Frontend Development";
-expDetails.appendChild(expH2);
+// Create and add the H2 element
+const detailsH2 = document.createElement("h2");
+detailsH2.className = "experience-sub-title";
+detailsH2.textContent = "Frontend Development";
+detailsContainerDiv.appendChild(detailsH2);
 
-// H--Create the Aticle container Div
+// Create the Article container Div
+const articleContainerDiv = document.createElement("div");
+articleContainerDiv.className = "article-container";
+detailsContainerDiv.appendChild(articleContainerDiv);
 
-const mainArticleDiv = document.createElement("div");
-mainArticleDiv.className = "article-container";
-expDetails.appendChild(mainArticleDiv);
-
-// I-2.0--Create the array of technologies
-const technologies = [
+// Create an Array of technology Stacks.
+const techStack = [
   { name: "HTML", level: "Experience" },
   { name: "CSS", level: "Experience" },
   { name: "SASS", level: "Intermediate" },
@@ -329,11 +328,10 @@ const technologies = [
   { name: "TypeScript", level: "Basic" },
   { name: "Material UI", level: "Intermediate" },
 ];
-// J--Create the article DIV, H#, P Tag  and Img elements
 
-//--Create function to work all the technology array of Objects.
-const createArticle = (tech) => {
-  const article = document.createElement("article");
+// Create the article DIV, H3, P Tag, and Img elements
+const createExperienceArticle = (technologies) => {
+  const articleElement = document.createElement("article");
 
   const articleImg = document.createElement("img");
   articleImg.src = "./assets/checkmark.png";
@@ -343,155 +341,65 @@ const createArticle = (tech) => {
   const articleDiv = document.createElement("div");
 
   const articleH3 = document.createElement("h3");
-  articleH3.innerText = tech.name;
+  articleH3.innerText = technologies.name;
 
   const articlePTag = document.createElement("p");
-  articlePTag.innerText = tech.level;
+  articlePTag.innerText = technologies.level;
 
   articleDiv.appendChild(articleH3);
   articleDiv.appendChild(articlePTag);
-  article.appendChild(articleDiv);
-  article.appendChild(articleImg);
+  articleElement.appendChild(articleDiv);
+  articleElement.appendChild(articleImg);
 
-  return article;
+  return articleElement;
 };
 
-// I--Create the article Tag elements
-// const article = document.createElement("article");
+// Create the second Details Container Div
+const secondDetailsContainerDiv = document.createElement("div");
+secondDetailsContainerDiv.className = "details-container";
+experienceAbout.appendChild(secondDetailsContainerDiv);
 
-// const articleImg = document.createElement("img");
-// articleImg.src = "./assets/checkmark.png";
-// articleImg.alt = "Experience icon";
-// articleImg.className = "icon";
-// // J--Create the article DIV, H#, P Tag  and Img elements
-// const articleDiv = document.createElement("div");
+const secondDetailsH2 = document.createElement("h2");
+secondDetailsH2.className = "experience-sub-title";
+secondDetailsH2.textContent = "Frontend Development";
+secondDetailsContainerDiv.appendChild(secondDetailsH2);
 
-// const articleH3 = document.createElement("h3");
-// articleH3.innerText = "HTML";
+const articleContainerDiv2 = document.createElement("div");
+articleContainerDiv2.className = "article-container";
+secondDetailsContainerDiv.appendChild(articleContainerDiv2);
 
-// const articlePTag = document.createElement("p");
-// articlePTag.innerText = "Experienced";
+// Create a second Array for the second Tech Stack
+const techStack2 = [
+  { name: "PostgreSQL", level: "Basic" },
+  { name: "Node JS", level: "Intermediate" },
+  { name: "Express JS", level: "Intermediate" },
+  { name: "Git", level: "Intermediate" },
+];
 
-// // K--Append all elements to the Article and Div
-// articleDiv.appendChild(articleH3);
-// articleDiv.appendChild(articlePTag);
-// article.appendChild(articleDiv);
-// article.appendChild(articleImg);
-// mainArticleDiv.appendChild(article);
+const createSecondExperienceArticle = (technologies) => {
+  const secondArticleElement = document.createElement("article");
 
-// // L--Create the second Article Element
-// const secondArticle = document.createElement("article");
+  const articleImg2 = document.createElement("img");
+  articleImg2.src = "./assets/checkmark.png";
+  articleImg2.alt = "Experience icon";
+  articleImg2.className = "icon";
 
-// const secondArticleImg = document.createElement("img");
-// secondArticleImg.src = "./assets/checkmark.png";
-// secondArticleImg.alt = "Experience icon";
-// secondArticleImg.className = "icon";
+  const secondArticleDiv = document.createElement("div");
 
-// // M--Create the Second article DIV, H3, P Tag and Img elements
-// const secondArticleDiv = document.createElement("div");
+  const secondArticleH3 = document.createElement("h3");
+  secondArticleH3.innerText = technologies.name;
 
-// const secondArticleH3 = document.createElement("h3");
-// secondArticleH3.innerText = "CSS";
+  const secondArticlePTag = document.createElement("p");
+  secondArticlePTag.innerText = technologies.level;
 
-// const secondArticlePTag = document.createElement("p");
-// secondArticlePTag.innerText = "Experienced";
+  secondArticleDiv.appendChild(secondArticleH3);
+  secondArticleDiv.appendChild(secondArticlePTag);
+  secondArticleElement.appendChild(secondArticleDiv);
+  secondArticleElement.appendChild(articleImg2);
 
-// secondArticleDiv.appendChild(secondArticleH3);
-// secondArticleDiv.appendChild(secondArticlePTag);
-// secondArticle.appendChild(secondArticleDiv);
-// secondArticle.appendChild(secondArticleImg);
-// mainArticleDiv.appendChild(secondArticle);
+  return secondArticleElement;
+};
 
-// // N--Create the Third article DIV, H3, P Tag and Img Elements
-// const thirdArticle = document.createElement("article");
-
-// const thirdArticleImg = document.createElement("img");
-// thirdArticleImg.src = "./assets/checkmark.png";
-// thirdArticleImg.alt = "Experience icon";
-// thirdArticleImg.className = "icon";
-
-// const thirdArticleDiv = document.createElement("div");
-
-// const thirdArticleH3 = document.createElement("h3");
-// thirdArticleH3.innerText = "SASS";
-
-// const thirdArticlePTag = document.createElement("p");
-// thirdArticlePTag.innerText = "Intermediate";
-
-// thirdArticleDiv.appendChild(thirdArticleH3);
-// thirdArticleDiv.appendChild(thirdArticlePTag);
-// thirdArticle.appendChild(thirdArticleDiv);
-// thirdArticle.appendChild(thirdArticleImg);
-// mainArticleDiv.appendChild(thirdArticle);
-
-// //O-- Create the Forth article DIV, H3, P Tag and Img Elements
-
-// const forthArticle = document.createElement("article");
-
-// const forthArticleImg = document.createElement("img");
-// forthArticleImg.src = "./assets/checkmark.png";
-// forthArticleImg.alt = "Experience icon";
-// forthArticleImg.className = "icon";
-
-// const forthArticleDiv = document.createElement("div");
-
-// const forthArticleH3 = document.createElement("h3");
-// forthArticleH3.innerText = "JavaScript";
-
-// const forthArticlePTag = document.createElement("p");
-// forthArticlePTag.innerText = "Basic";
-
-// forthArticleDiv.appendChild(forthArticleH3);
-// forthArticleDiv.appendChild(forthArticlePTag);
-// forthArticle.appendChild(forthArticleDiv);
-// forthArticle.appendChild(forthArticleImg);
-// mainArticleDiv.appendChild(forthArticle);
-
-// //P--Create the Fifht article DIV, H3, P Tag and Img Elements
-// const fifthArticle = document.createElement("article");
-
-// const fifthArticleImg = document.createElement("img");
-// fifthArticleImg.src = "./assets/checkmark.png";
-// fifthArticleImg.alt = "Experience icon";
-// fifthArticleImg.className = "icon";
-
-// const fifthArticleDiv = document.createElement("div");
-
-// const fifthArticleH3 = document.createElement("h3");
-// fifthArticleH3.innerText = "TypeScript";
-
-// const fifthArticlePTag = document.createElement("p");
-// fifthArticlePTag.innerText = "Basic";
-
-// fifthArticleDiv.appendChild(fifthArticleH3);
-// fifthArticleDiv.appendChild(fifthArticlePTag);
-// fifthArticle.appendChild(fifthArticleDiv);
-// fifthArticle.appendChild(fifthArticleImg);
-// mainArticleDiv.appendChild(fifthArticle);
-
-//Q--Create the Sixth article DIV, H3, P Tag and Img Elements
-
-const sixthArticle = document.createElement("article");
-
-const sixthArticleImg = document.createElement("img");
-sixthArticleImg.src = "./assets/checkmark.png";
-sixthArticleImg.alt = "Experience icon";
-sixthArticleImg.className = "icon";
-
-const sixthRticleDIV = document.createElement("div");
-
-const sixthArticleH3 = document.createElement("h3");
-sixthArticleH3.innerText = "Material UI";
-
-const sixthArticlePTag = document.createElement("p");
-sixthArticlePTag.innerText = "Intermediate";
-
-sixthArticle.appendChild(sixthArticleH3);
-sixthArticle.appendChild(sixthArticlePTag);
-sixthArticle.appendChild(sixthRticleDIV);
-mainArticleDiv.appendChild(sixthArticle);
-
-expDetailsContainer.appendChild(expAbout);
 
 // R--Second Details Container
 
