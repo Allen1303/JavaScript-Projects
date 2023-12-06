@@ -418,8 +418,9 @@ secondArrowImg.onclick = () => {
 };
 experienceSection.appendChild(secondArrowImg);
 
-document.body.appendChild(experienceSection);
 
+
+document.body.appendChild(experienceSection);
 /*============CSS  AND SASS STYLING============== */
 
 // Step 1: Create a Style Element
