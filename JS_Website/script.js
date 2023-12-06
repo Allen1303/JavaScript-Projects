@@ -376,7 +376,7 @@ const techStack2 = [
   { name: "Git", level: "Intermediate" },
 ];
 
-const createSecondExperienceArticle = (technologies) => {
+const createSecondExperienceArticle = (technologies2) => {
   const secondArticleElement = document.createElement("article");
 
   const articleImg2 = document.createElement("img");
@@ -387,10 +387,10 @@ const createSecondExperienceArticle = (technologies) => {
   const secondArticleDiv = document.createElement("div");
 
   const secondArticleH3 = document.createElement("h3");
-  secondArticleH3.innerText = technologies.name;
+  secondArticleH3.innerText = technologies2.name;
 
   const secondArticlePTag = document.createElement("p");
-  secondArticlePTag.innerText = technologies.level;
+  secondArticlePTag.innerText = technologies2.level;
 
   secondArticleDiv.appendChild(secondArticleH3);
   secondArticleDiv.appendChild(secondArticlePTag);
@@ -399,6 +399,18 @@ const createSecondExperienceArticle = (technologies) => {
 
   return secondArticleElement;
 };
+
+const secondArrowImg = document.createElement("img");
+secondArrowImg.src = "./assets/arrow.png";
+secondArrowImg.alt = "Arrow icon";
+secondArrowImg.onclick = () => {
+  location.href = "./#projects";
+};
+
+experienceSection.appendChild(secondArrowImg);
+
+
+
 
 
 // R--Second Details Container
