@@ -410,17 +410,27 @@ techStack2.forEach((technology) => {
   articleContainerDiv2.appendChild(techArticle);
 });
 
+// ... (Previous code)
+
+
+
+
+
+const arrowContainer = document.createElement("div");
+arrowContainer.className = "arrow-container";
+
 const secondArrowImg = document.createElement("img");
 secondArrowImg.src = "./assets/arrow.png";
 secondArrowImg.alt = "Arrow icon";
+secondArrowImg.className = "icon arrow"
 secondArrowImg.onclick = () => {
   location.href = "./#projects";
 };
-experienceSection.appendChild(secondArrowImg);
 
-
-
+arrowContainer.appendChild(secondArrowImg);
+experienceSection.appendChild(arrowContainer);
 document.body.appendChild(experienceSection);
+
 /*============CSS  AND SASS STYLING============== */
 
 // Step 1: Create a Style Element
