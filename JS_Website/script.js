@@ -410,19 +410,13 @@ techStack2.forEach((technology) => {
   articleContainerDiv2.appendChild(techArticle);
 });
 
-// ... (Previous code)
-
-
-
-
-
 const arrowContainer = document.createElement("div");
 arrowContainer.className = "arrow-container";
 
 const secondArrowImg = document.createElement("img");
 secondArrowImg.src = "./assets/arrow.png";
 secondArrowImg.alt = "Arrow icon";
-secondArrowImg.className = "icon arrow"
+secondArrowImg.className = "icon arrow";
 secondArrowImg.onclick = () => {
   location.href = "./#projects";
 };
@@ -430,6 +424,42 @@ secondArrowImg.onclick = () => {
 arrowContainer.appendChild(secondArrowImg);
 experienceSection.appendChild(arrowContainer);
 document.body.appendChild(experienceSection);
+
+/*====STEP 11 CREATE THE PROJECTS SECTION=====*/
+// A--create the project section element
+const projectsSection = document.createElement("section");
+projectsSection.id = "projects";
+// B--create the first P tag element in the  project section
+const projectsPElement = document.createElement("p");
+projectsPElement.className = "section__text__p1";
+projectsPElement.textContent = "Browse My Recent";
+projectsSection.appendChild(projectsPElement);
+// C--create the first h1 tag element in the  project section
+const projectsH1 = document.createElement("h1");
+projectsH1.className = "title";
+projectsH1.textContent = "Projects";
+projectsSection.appendChild(projectsH1);
+// D--create experience details container Div
+const projectsExpDetails = document.createElement("div");
+projectsExpDetails.className = "experience-details-container";
+projectsSection.appendChild(projectsExpDetails);
+// E--create About container Div
+const projectsAboutContainer = document.createElement("div");
+projectsAboutContainer.className = "about-containers";
+projectsExpDetails.appendChild(projectsAboutContainer);
+// F--create Details container Div
+const projectsDetailsContainer = document.createElement("div");
+projectsSection.className = "details-container color-container";
+projectsAboutContainer.appendChild(projectsDetailsContainer);
+
+const projectsArticleContainer = document.createElement("div");
+// Create the First Project Article Image Element
+const articleContainerImg = document.createElement("img");
+articleContainerImg.src = "./assets/project-1.png";
+articleContainerImg.alt = "Project 1";
+articleContainerImg.className = "project-img";
+projectsArticleContainer.appendChild(articleContainerImg);
+projectsDetailsContainer.appendChild(projectsArticleContainer);
 
 /*============CSS  AND SASS STYLING============== */
 
