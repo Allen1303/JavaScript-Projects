@@ -486,6 +486,14 @@ projectButton.onclick = () => {
 };
 btnContainerDiv.appendChild(projectButton);
 
+const projectButton2 = document.createElement("button");
+projectButton2.className = "btn btn-color-2 project-btn";
+projectButton2.onclick = () => {
+  window.open("https://github.com/", "_blank");
+  projectButton2.textContent = " Live Demo";
+};
+btnContainerDiv.appendChild(projectButton2);
+
 /*============CSS  AND SASS STYLING============== */
 
 // Step 1: Create a Style Element
