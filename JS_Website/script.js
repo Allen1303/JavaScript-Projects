@@ -439,27 +439,52 @@ const projectsH1 = document.createElement("h1");
 projectsH1.className = "title";
 projectsH1.textContent = "Projects";
 projectsSection.appendChild(projectsH1);
+
 // D--create experience details container Div
 const projectsExpDetails = document.createElement("div");
 projectsExpDetails.className = "experience-details-container";
 projectsSection.appendChild(projectsExpDetails);
+
 // E--create About container Div
 const projectsAboutContainer = document.createElement("div");
 projectsAboutContainer.className = "about-containers";
 projectsExpDetails.appendChild(projectsAboutContainer);
+
 // F--create Details container Div
 const projectsDetailsContainer = document.createElement("div");
 projectsSection.className = "details-container color-container";
 projectsAboutContainer.appendChild(projectsDetailsContainer);
+// G--Create the First Project Article Image Element
 
 const projectsArticleContainer = document.createElement("div");
-// Create the First Project Article Image Element
+projectsArticleContainer.className = "article-container";
+projectsDetailsContainer.appendChild(projectsArticleContainer);
+
+// H--Create and add the image to the Article  Element
 const articleContainerImg = document.createElement("img");
 articleContainerImg.src = "./assets/project-1.png";
 articleContainerImg.alt = "Project 1";
 articleContainerImg.className = "project-img";
 projectsArticleContainer.appendChild(articleContainerImg);
 projectsDetailsContainer.appendChild(projectsArticleContainer);
+
+// I--Create and add the image to the Article  Element
+const projectsH2 = document.createElement("h2");
+projectsH2.className = "experience-sub-title project-title";
+projectsH2.textContent = "Project One";
+projectsDetailsContainer.appendChild(projectsH2);
+
+const btnContainerDiv = document.createElement("div");
+btnContainerDiv.className = "btn-container";
+projectsDetailsContainer.appendChild(btnContainerDiv);
+
+const projectButton = document.createElement("button");
+projectButton.className = "btn btn-color-2 project-btn";
+projectButton.onclick = () => {
+  window.open("https://github.com/", "_blank");
+  projectButton.textContent = "Github";
+};
+btnContainerDiv.appendChild(projectButton);
 
 /*============CSS  AND SASS STYLING============== */
 
