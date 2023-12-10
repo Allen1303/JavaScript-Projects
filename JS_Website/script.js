@@ -523,7 +523,7 @@ projectsDetailsContainer2.appendChild(secondProjectH2);
 const secondBtnContainerDiv = document.createElement("div");
 secondBtnContainerDiv.className = "btn-container";
 projectsDetailsContainer2.appendChild(secondBtnContainerDiv);
-
+// P--Create second project button for the button container div
 const secondProjectButton1 = document.createElement("button");
 secondProjectButton1.className = "btn btn-color-2 project-btn";
 secondProjectButton1.textContent = "Github";
@@ -539,7 +539,7 @@ secondProjectButton2.onclick = () => {
   window.open("https://github.com/", "_blank");
 };
 secondBtnContainerDiv.appendChild(secondProjectButton2);
-
+// Create a thrid details  container in the project section
 const projectDetailsContainer3 = document.createElement("div");
 projectDetailsContainer3.className = "details-container color-container";
 projectsAboutContainer.appendChild(projectDetailsContainer3);
@@ -555,6 +555,7 @@ articleContainerImg3.className = "project-img";
 projectsArticleContainer3.appendChild(articleContainerImg3);
 projectDetailsContainer3.appendChild(projectsArticleContainer3);
 
+// create and append the h2 element
 const thirdProjectH2 = document.createElement("h2");
 thirdProjectH2.className = "experience-sub-title project-title";
 thirdProjectH2.textContent = "Project Three";
@@ -564,6 +565,7 @@ const thirdBtnContainerDiv = document.createElement("div");
 thirdBtnContainerDiv.className = "btn-container";
 projectDetailsContainer3.appendChild(thirdBtnContainerDiv);
 
+// Create the third project element button
 const thirdProjectButton1 = document.createElement("button");
 thirdProjectButton1.className = "btn btn-color-2 project-btn";
 thirdProjectButton1.textContent = "Github";
@@ -580,16 +582,18 @@ thirdProjectButton2.onclick = () => {
 };
 thirdBtnContainerDiv.appendChild(thirdProjectButton2);
 
-const thirdArrowImg = document.createElement("img");
-thirdArrowImg.src = "./assets/arrow.png";
-thirdArrowImg.alt = "Arrow icon";
-thirdArrowImg.className = "icon arrow";
-thirdArrowImg.onclick = () => {
-  location.href = "./#contact";
-};
 const arrowContainer3 = document.createElement("div");
 arrowContainer3.className = "arrow-container";
-arrowContainer3.appendChild(thirdArrowImg);
+
+const arrowImg3 = document.createElement("img");
+arrowImg3.src = "./assets/arrow.png";
+arrowImg3.alt = "Arrow icon";
+arrowImg3.className = "icon arrow";
+arrowImg3.onclick = () => {
+  location.href = "./#contact";
+};
+
+arrowContainer3.appendChild(arrowImg3);
 projectsSection.appendChild(arrowContainer3);
 document.body.appendChild(projectsSection);
 
