@@ -587,8 +587,10 @@ thirdArrowImg.className = "icon arrow";
 thirdArrowImg.onclick = () => {
   location.href = "./#contact";
 };
-arrowContainer.appendChild(thirdArrowImg);
-projectsSection.appendChild(arrowContainer);
+const arrowContainer3 = document.createElement("div");
+arrowContainer3.className = "arrow-container";
+arrowContainer3.appendChild(thirdArrowImg);
+projectsSection.appendChild(arrowContainer3);
 document.body.appendChild(projectsSection);
 
 /*============CSS  AND SASS STYLING============== */
