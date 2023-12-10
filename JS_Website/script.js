@@ -452,7 +452,7 @@ projectsExpDetails.appendChild(projectsAboutContainer);
 
 // F--create Details container Div
 const projectsDetailsContainer = document.createElement("div");
-projectsSection.className = "details-container color-container";
+projectsDetailsContainer.className = "details-container color-container";
 projectsAboutContainer.appendChild(projectsDetailsContainer);
 // G--Create the First Project Article Image Element
 
@@ -474,32 +474,129 @@ projectsH2.className = "experience-sub-title project-title";
 projectsH2.textContent = "Project One";
 projectsDetailsContainer.appendChild(projectsH2);
 
+// J--Create Button Container
 const btnContainerDiv = document.createElement("div");
 btnContainerDiv.className = "btn-container";
 projectsDetailsContainer.appendChild(btnContainerDiv);
 
 const projectButton = document.createElement("button");
 projectButton.className = "btn btn-color-2 project-btn";
+projectButton.innerText = "Github";
 projectButton.onclick = () => {
   window.open("https://github.com/", "_blank");
-  projectButton.textContent = "Github";
 };
 btnContainerDiv.appendChild(projectButton);
 
 const projectButton2 = document.createElement("button");
 projectButton2.className = "btn btn-color-2 project-btn";
+projectButton2.innerText = " Live Demo";
 projectButton2.onclick = () => {
   window.open("https://github.com/", "_blank");
-  projectButton2.textContent = " Live Demo";
 };
 btnContainerDiv.appendChild(projectButton2);
+
+// K--Create the second details container Div
+const projectsDetailsContainer2 = document.createElement("div");
+projectsDetailsContainer2.className = "details-container color-container";
+projectsAboutContainer.appendChild(projectsDetailsContainer2);
+
+// L--Create the second Article Conatainer.
+const projectsArticleContainer2 = document.createElement("div");
+projectsArticleContainer2.className = "article-container";
+projectsDetailsContainer2.appendChild(projectsArticleContainer2);
+
+// M--Create the the second article image element
+const articleContainerImg2 = document.createElement("img");
+articleContainerImg2.src = "./assets/project-2.png";
+articleContainerImg2.alt = "Project 2";
+articleContainerImg2.className = "project-img";
+projectsArticleContainer2.appendChild(articleContainerImg2);
+projectsDetailsContainer2.appendChild(projectsArticleContainer2);
+
+// N--Create Second H2  element
+const secondProjectH2 = document.createElement("h2");
+secondProjectH2.className = "experience-sub-title project-title";
+secondProjectH2.textContent = "Project Two";
+projectsDetailsContainer2.appendChild(secondProjectH2);
+
+// O--Create the second button conatainer
+const secondBtnContainerDiv = document.createElement("div");
+secondBtnContainerDiv.className = "btn-container";
+projectsDetailsContainer2.appendChild(secondBtnContainerDiv);
+
+const secondProjectButton1 = document.createElement("button");
+secondProjectButton1.className = "btn btn-color-2 project-btn";
+secondProjectButton1.textContent = "Github";
+secondProjectButton1.onclick = () => {
+  window.open("https://github.com/", "_blank");
+};
+secondBtnContainerDiv.appendChild(secondProjectButton1);
+
+const secondProjectButton2 = document.createElement("button");
+secondProjectButton2.className = "btn btn-color-2 project-btn";
+secondProjectButton2.textContent = "Live Demo";
+secondProjectButton2.onclick = () => {
+  window.open("https://github.com/", "_blank");
+};
+secondBtnContainerDiv.appendChild(secondProjectButton2);
+
+const projectDetailsContainer3 = document.createElement("div");
+projectDetailsContainer3.className = "details-container color-container";
+projectsAboutContainer.appendChild(projectDetailsContainer3);
+
+const projectsArticleContainer3 = document.createElement("div");
+projectsArticleContainer3.className = "article-container";
+projectDetailsContainer3.appendChild(projectsArticleContainer3);
+
+const articleContainerImg3 = document.createElement("img");
+articleContainerImg3.src = "./assets/project-3.png";
+articleContainerImg3.alt = "Project 3";
+articleContainerImg3.className = "project-img";
+projectsArticleContainer3.appendChild(articleContainerImg3);
+projectDetailsContainer3.appendChild(projectsArticleContainer3);
+
+const thirdProjectH2 = document.createElement("h2");
+thirdProjectH2.className = "experience-sub-title project-title";
+thirdProjectH2.textContent = "Project Three";
+projectsArticleContainer3.appendChild(thirdProjectH2);
+
+const thirdBtnContainerDiv = document.createElement("div");
+thirdBtnContainerDiv.className = "btn-container";
+projectDetailsContainer3.appendChild(thirdBtnContainerDiv);
+
+const thirdProjectButton1 = document.createElement("button");
+thirdProjectButton1.className = "btn btn-color-2 project-btn";
+thirdProjectButton1.textContent = "Github";
+thirdProjectButton1.onclick = () => {
+  window.open("https://github.com/", "_blank");
+};
+thirdBtnContainerDiv.appendChild(thirdProjectButton1);
+
+const thirdProjectButton2 = document.createElement("button");
+thirdProjectButton2.className = "btn btn-color-2 project-btn";
+thirdProjectButton2.textContent = " Live Demo";
+thirdProjectButton2.onclick = () => {
+  window.open("https://github.com/", "_blank");
+};
+thirdBtnContainerDiv.appendChild(thirdProjectButton2);
+
+const thirdArrowImg = document.createElement("img");
+thirdArrowImg.src = "./assets/arrow.png";
+thirdArrowImg.alt = "Arrow icon";
+thirdArrowImg.className = "icon arrow";
+thirdArrowImg.onclick = () => {
+  location.href = "./#contact";
+};
+arrowContainer.appendChild(thirdArrowImg);
+projectsSection.appendChild(arrowContainer);
+document.body.appendChild(projectsSection);
 
 /*============CSS  AND SASS STYLING============== */
 
 // Step 1: Create a Style Element
 const styleElement = document.createElement("style");
 
-// Step 2: Set CSS Styles
+// Step 2: Set CSS Style
 styleElement.innerHTML = `
 /* GENERAL */
 
