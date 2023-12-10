@@ -1,0 +1,25 @@
+body {
+    font-family: sans-serif, "Poppins";
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+
+.completed {
+    background-color: #d4edda;
+}
+
+button {
+    cursor: pointer;
+}
