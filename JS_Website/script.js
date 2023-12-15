@@ -597,7 +597,29 @@ arrowContainer3.appendChild(arrowImg3);
 projectsSection.appendChild(arrowContainer3);
 document.body.appendChild(projectsSection);
 
-/*============CSS  AND SASS STYLING============== */
+/*=======CREATE THE CONTACT SECTION==============*/
+const contactSection = document.createElement("section");
+contactSection.id = "contact";
+
+const contactPElement = document.createElement("p");
+contactPElement.className = "section__text__p1";
+contactPElement.textContent = "Get in Touch";
+contactSection.appendChild(contactPElement);
+
+const contactH1 = document.createElement("h1");
+contactH1.className = "title";
+contactH1.textContent = "Contact Me";
+contactSection.appendChild(contactH1);
+
+const contactUpperContainerDiv = document.createElement("div");
+contactUpperContainerDiv.className = "contact-info-upper-container";
+contactSection.appendChild(contactUpperContainerDiv);
+
+const contactInfoContainer = document.createElement("div");
+contactInfoContainer.className = "contact-info-container";
+contactUpperContainerDiv.appendChild(contactInfoContainer);
+
+/*============CSS AND SASS STYLING============== */
 
 // Step 1: Create a Style Element
 const styleElement = document.createElement("style");
