@@ -615,15 +615,15 @@ const contactUpperContainerDiv = document.createElement("div");
 contactUpperContainerDiv.className = "contact-info-upper-container";
 contactSection.appendChild(contactUpperContainerDiv);
 
-const contactInfoContainerDiv = document.createElement("div");
-contactInfoContainerDiv.className = "contact-info-container";
-contactUpperContainerDiv.appendChild(contactInfoContainerDiv);
+const contactInfoDiv = document.createElement("div");
+contactInfoDiv.className = "contact-info-container";
+contactUpperContainerDiv.appendChild(contactInfoDiv);
 
 const contactInfoImg = document.createElement("img");
 contactInfoImg.src = "./assets/email.png";
 contactInfoImg.alt = "Email icon";
 contactInfoImg.className = "icon contact-icon email-icon";
-contactInfoContainerDiv.appendChild(contactInfoImg);
+contactInfoDiv.appendChild(contactInfoImg);
 
 const contactInfoParagraph = document.createElement("p");
 const contactInfoAnchorTag = document.createElement("a");
@@ -632,9 +632,28 @@ contactInfoAnchorTag.href = "mailto:examplemail@gmail.com";
 contactInfoAnchorTag.textContent = "Example@gmail.com";
 
 contactInfoParagraph.appendChild(contactInfoAnchorTag);
-contactInfoContainerDiv.appendChild(contactInfoParagraph);
+contactInfoDiv.appendChild(contactInfoParagraph);
 
+const secondContactInfoDiv = document.createElement("div");
+secondContactInfoDiv.className = "contact-info-container";
+contactUpperContainerDiv.appendChild(secondContactInfoDiv);
 
+const secondContactInfoImg = document.createElement("img");
+secondContactInfoImg.src = "./assets/linkedin.png";
+secondContactInfoImg.alt = "LinkedIn icon";
+secondContactInfoImg.className = "icon contact-icon";
+secondContactInfoDiv.appendChild(secondContactInfoImg);
+
+const secondContactInfoParagraph = document.createElement("p");
+const secondContactInfoAnchorTag = document.createElement("a");
+
+secondContactInfoAnchorTag.href = "https://www.linkedin.com";
+secondContactInfoAnchorTag.textContent = "LinkedIn";
+
+secondContactInfoParagraph.appendChild(secondContactInfoAnchorTag);
+secondContactInfoDiv.appendChild(secondContactInfoParagraph);
+
+document.body.appendChild(contactSection);
 
 /*============CSS AND SASS STYLING============== */
 
