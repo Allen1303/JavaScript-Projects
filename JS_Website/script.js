@@ -901,7 +901,7 @@ section {
   transition: all 300ms ease;
 }
 .icon:hover{
-color: lightblue;
+color:  rgb(37, 153, 198);
  transform: scale(1.2);
 }
 
