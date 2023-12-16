@@ -615,9 +615,26 @@ const contactUpperContainerDiv = document.createElement("div");
 contactUpperContainerDiv.className = "contact-info-upper-container";
 contactSection.appendChild(contactUpperContainerDiv);
 
-const contactInfoContainer = document.createElement("div");
-contactInfoContainer.className = "contact-info-container";
-contactUpperContainerDiv.appendChild(contactInfoContainer);
+const contactInfoContainerDiv = document.createElement("div");
+contactInfoContainerDiv.className = "contact-info-container";
+contactUpperContainerDiv.appendChild(contactInfoContainerDiv);
+
+const contactInfoImg = document.createElement("img");
+contactInfoImg.src = "./assets/email.png";
+contactInfoImg.alt = "Email icon";
+contactInfoImg.className = "icon contact-icon email-icon";
+contactInfoContainerDiv.appendChild(contactInfoImg);
+
+const contactInfoParagraph = document.createElement("p");
+const contactInfoAnchorTag = document.createElement("a");
+
+contactInfoAnchorTag.href = "mailto:examplemail@gmail.com";
+contactInfoAnchorTag.textContent = "Example@gmail.com";
+
+contactInfoParagraph.appendChild(contactInfoAnchorTag);
+contactInfoContainerDiv.appendChild(contactInfoParagraph);
+
+
 
 /*============CSS AND SASS STYLING============== */
 
