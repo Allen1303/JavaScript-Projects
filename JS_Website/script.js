@@ -628,7 +628,7 @@ contactInfoDiv.appendChild(contactInfoImg);
 const contactInfoParagraph = document.createElement("p");
 const contactInfoAnchorTag = document.createElement("a");
 
-contactInfoAnchorTag.href = "mailto:examplemail@gmail.com";
+(contactInfoAnchorTag.href = "mailto:examplemail@gmail.com"), "_blank";
 contactInfoAnchorTag.textContent = "Example@gmail.com";
 
 contactInfoParagraph.appendChild(contactInfoAnchorTag);
@@ -647,7 +647,7 @@ secondContactInfoDiv.appendChild(secondContactInfoImg);
 const secondContactInfoParagraph = document.createElement("p");
 const secondContactInfoAnchorTag = document.createElement("a");
 
-secondContactInfoAnchorTag.href = "https://www.linkedin.com";
+(secondContactInfoAnchorTag.href = "https://www.linkedin.com"), "_blank";
 secondContactInfoAnchorTag.textContent = "LinkedIn";
 
 secondContactInfoParagraph.appendChild(secondContactInfoAnchorTag);
