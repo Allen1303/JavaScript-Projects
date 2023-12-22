@@ -242,8 +242,7 @@ const educationH3 = document.createElement("h3");
 educationH3.innerText = "Education";
 
 const educationParagraph = document.createElement("p");
-educationParagraph.innerHTML =
-  "B.Sc. Bachelors Degree<br />M.Sc. Masters Degree";
+educationParagraph.innerHTML = "B.Sc. Bachelors Degree<br />M.Sc. Masters Degree";
 
 detailsContainer2.appendChild(educationImg);
 detailsContainer2.appendChild(educationH3);
@@ -257,8 +256,7 @@ const textContainerDiv = document.createElement("div");
 textContainerDiv.className = "text-container";
 
 const textParagraph = document.createElement("p");
-textParagraph.innerText =
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis reprehenderit et laborum, rem, dolore eum quod voluptate exercitationem nobis, nihil esse debitis maxime facere minus sint delectus velit in eos quo officiis explicabo deleniti dignissimos. Eligendi illum libero dolorum cum laboriosam corrupti quidem,reiciendis ea magnam? Nulla, impedit fuga!";
+textParagraph.innerText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis reprehenderit et laborum, rem, dolore eum quod voluptate exercitationem nobis, nihil esse debitis maxime facere minus sint delectus velit in eos quo officiis explicabo deleniti dignissimos. Eligendi illum libero dolorum cum laboriosam corrupti quidem,reiciendis ea magnam? Nulla, impedit fuga!";
 aboutDetailsContainer.appendChild(textParagraph);
 
 const arrowImg = document.createElement("img");
@@ -628,7 +626,7 @@ contactInfoDiv.appendChild(contactInfoImg);
 const contactInfoParagraph = document.createElement("p");
 const contactInfoAnchorTag = document.createElement("a");
 
-(contactInfoAnchorTag.href = "mailto:examplemail@gmail.com", "_blank");
+(contactInfoAnchorTag.href = "mailto:examplemail@gmail.com"), "_blank";
 contactInfoAnchorTag.textContent = "Example@gmail.com";
 
 contactInfoParagraph.appendChild(contactInfoAnchorTag);
@@ -647,13 +645,38 @@ secondContactInfoDiv.appendChild(secondContactInfoImg);
 const secondContactInfoParagraph = document.createElement("p");
 const secondContactInfoAnchorTag = document.createElement("a");
 
-(secondContactInfoAnchorTag.href = "https://www.linkedin.com", "_blank");
+(secondContactInfoAnchorTag.href = "https://www.linkedin.com"), "_blank";
 secondContactInfoAnchorTag.textContent = "LinkedIn";
 
 secondContactInfoParagraph.appendChild(secondContactInfoAnchorTag);
 secondContactInfoDiv.appendChild(secondContactInfoParagraph);
 
 document.body.appendChild(contactSection);
+
+/*===========Step=#12 CREATE FOOTER============*/
+const footer = document.createElement("footer");
+
+const footerNav = document.createElement("nav");
+footer.appendChild(footerNav);
+
+const navDivElement = document.createElement("div");
+navDivElement.className = "nav-links-container";
+footerNav.appendChild(navDivElement);
+
+const footerUlElement = document.createElement("ul");
+footerUlElement.className = "nav-links";
+navDivElement.appendChild(footerUlElement);
+
+
+for (const footerUlList of liArray) {
+  const footerLi = document.createElement("li");
+  const footerNavUlAnchorTag = document.createElement("a");
+  footerNavUlAnchorTag.href = `#${footerUlList.toLowerCase()}`;
+  footerNavUlAnchorTag.textContent = footerUlList;
+  footerLi.appendChild(footerNavUlAnchorTag);
+  footerUlElement.appendChild(footerLi);
+}
+// navDivElement.appendChild(footerUlElement);
 
 /*============CSS AND SASS STYLING============== */
 
