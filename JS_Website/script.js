@@ -667,7 +667,6 @@ const footerUlElement = document.createElement("ul");
 footerUlElement.className = "nav-links";
 navDivElement.appendChild(footerUlElement);
 
-
 for (const footerUlList of liArray) {
   const footerLi = document.createElement("li");
   const footerNavUlAnchorTag = document.createElement("a");
@@ -676,7 +675,12 @@ for (const footerUlList of liArray) {
   footerLi.appendChild(footerNavUlAnchorTag);
   footerUlElement.appendChild(footerLi);
 }
-// navDivElement.appendChild(footerUlElement);
+const footerPElement = document.createElement("p");
+footerPElement.textContent = "Copyright &#169; 2023 John Doe. All Rights Reserved";
+
+footer.appendChild(footerPElement);
+document.body.appendChild(footer);
+
 
 /*============CSS AND SASS STYLING============== */
 
