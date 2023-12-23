@@ -626,7 +626,9 @@ contactInfoDiv.appendChild(contactInfoImg);
 const contactInfoParagraph = document.createElement("p");
 const contactInfoAnchorTag = document.createElement("a");
 
-(contactInfoAnchorTag.href = "mailto:examplemail@gmail.com"), "_blank";
+contactInfoAnchorTag.onclick = () =>{
+  window.open("mailto:examplemail@gmail.com", "_blank");
+}; 
 contactInfoAnchorTag.textContent = "Example@gmail.com";
 
 contactInfoParagraph.appendChild(contactInfoAnchorTag);
@@ -645,7 +647,9 @@ secondContactInfoDiv.appendChild(secondContactInfoImg);
 const secondContactInfoParagraph = document.createElement("p");
 const secondContactInfoAnchorTag = document.createElement("a");
 
-(secondContactInfoAnchorTag.href = "https://www.linkedin.com"), "_blank";
+secondContactInfoAnchorTag.onclick = () => {
+  window.open("https://www.linkedin.com", "_blank");
+};
 secondContactInfoAnchorTag.textContent = "LinkedIn";
 
 secondContactInfoParagraph.appendChild(secondContactInfoAnchorTag);
@@ -680,7 +684,6 @@ footerPElement.textContent = "Copyright &#169; 2023 John Doe. All Rights Reserve
 
 footer.appendChild(footerPElement);
 document.body.appendChild(footer);
-
 
 /*============CSS AND SASS STYLING============== */
 
