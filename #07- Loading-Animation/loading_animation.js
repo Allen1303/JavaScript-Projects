@@ -15,7 +15,6 @@ for (let loadIndex = 0; loadIndex <= 3; loadIndex++) {
   loaderDiv.style.animationDelay = `${0.4 + loadIndex * 0.1}s`;
   sectionDiv.appendChild(loaderDiv);
 }
-
 /* ========APPLY THE CSS==WITH JAVASCRIPT==========*/
 /*Step 1. create the style element */
 const styleElement = document.createElement("style");
