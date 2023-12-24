@@ -58,18 +58,7 @@ styleElement.innerHTML = `
   .loader .loading.one {
     animation-delay: 0.4s;
   }
-  .loader .loading.two {
-    animation-delay: 0.5s;
-  }
-  .loader .loading.three {
-    animation-delay: 0.6s;
-  }
-  .loader .loading.four {
-    animation-delay: 0.7s;
-  }
-  .loader .loading.four {
-    animation-delay: 0.8s;
-  }
+
 
   @keyframes load {
     0% {
