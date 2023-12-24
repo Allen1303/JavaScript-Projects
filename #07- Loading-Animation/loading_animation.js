@@ -8,21 +8,13 @@ const sectionDiv = document.createElement("div");
 sectionDiv.className = "loader";
 sectionElement.appendChild(sectionDiv);
 
-const divLoaderOne = document.createElement("div");
-divLoaderOne.className = "loading one";
-sectionDiv.appendChild(divLoaderOne);
-
-const divLoaderTwo = document.createElement("div");
-divLoaderTwo.className = "loading two";
-sectionDiv.appendChild(divLoaderTwo);
-
-const divLoaderThree = document.createElement("div");
-divLoaderThree.className = "loading three";
-sectionDiv.appendChild(divLoaderThree);
-
-const divLoaderFour = document.createElement("div");
-divLoaderFour.className = "loading four";
-sectionDiv.appendChild(divLoaderFour);
+/*Use For loop to create and Iterate through all 4 Div's with loading class name */
+for (let loadIndex = 0; loadIndex <= 3; loadIndex++) {
+  const loaderDiv = document.createElement("div");
+  loaderDiv.className = `loading ${loadIndex}`;
+  loaderDiv.style.animationDelay = `${0.4 + loadIndex * 0.1}s`;
+  sectionDiv.appendChild(loaderDiv);
+}
 
 /* ========APPLY THE CSS==WITH JAVASCRIPT==========*/
 /*Step 1. create the style element */
