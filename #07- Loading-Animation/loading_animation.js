@@ -13,7 +13,7 @@ divLoaderOne.className = "loading one";
 sectionDiv.appendChild(divLoaderOne);
 
 const divLoaderTwo = document.createElement("div");
-divLoadeTwoclassName = "loading two";
+divLoaderTwo.className = "loading two";
 sectionDiv.appendChild(divLoaderTwo);
 
 const divLoaderThree = document.createElement("div");
@@ -26,10 +26,10 @@ sectionDiv.appendChild(divLoaderFour);
 
 /* ========APPLY THE CSS==WITH JAVASCRIPT==========*/
 /*Step 1. create the style element */
-const styleElemnt = document.createElement("style");
+const styleElement = document.createElement("style");
 
 /*=== Step 2: Set CSS Style==*/
-styleElemnt.innerHTML = `
+styleElement.innerHTML = `
 
 * {
     margin: 0;
@@ -38,7 +38,7 @@ styleElemnt.innerHTML = `
   }
   
   body {
-    background: #fb896b;
+    background: #b64c31;
   }
   
   .wrapper {
@@ -64,15 +64,21 @@ styleElemnt.innerHTML = `
   }
   
   .loader .loading.one {
-    animation-delay: 0.3s;
-  }
-  .loader .loading.two {
     animation-delay: 0.4s;
   }
-  .loader .loading.three {
+  .loader .loading.two {
     animation-delay: 0.5s;
   }
-  
+  .loader .loading.three {
+    animation-delay: 0.6s;
+  }
+  .loader .loading.four {
+    animation-delay: 0.7s;
+  }
+  .loader .loading.four {
+    animation-delay: 0.8s;
+  }
+
   @keyframes load {
     0% {
       width: 30px;
@@ -86,4 +92,4 @@ styleElemnt.innerHTML = `
 
 `;
 /*==Step 3: Append Style Element to Head==*/
-document.head.appendChild(styleElemnt);
+document.head.appendChild(styleElement);
