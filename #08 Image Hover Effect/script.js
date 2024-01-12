@@ -25,7 +25,7 @@ const styleElement = document.createElement("style");
 styleElement.innerHTML = ` body {
     margin: 0;
     padding: 0;
-    background: #555;
+    background: whitesmoke;
     height: 100vh;
     display: flex;
     justify-content: center;
