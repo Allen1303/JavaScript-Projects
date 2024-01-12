@@ -1,6 +1,20 @@
 "use strict";
 const section = document.createElement("section");
-section.className = "wrapper";
+section.className = "container";
+document.body.appendChild(section);
+
+/*Create the Div that holds all other Divs*/
+const divOne = document.createElement("div");
+divOne.className = "clip clip1";
+section.appendChild(divOne);
+
+const divTwo = document.createElement("div");
+divTwo.className = "clip clip2";
+section.appendChild(divTwo);
+
+const divThree = document.createElement("div");
+divThree.className = "clip clip3";
+section.appendChild(divThree);
 
 
 /* ========APPLY THE CSS==WITH JAVASCRIPT==========*/
