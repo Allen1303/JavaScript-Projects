@@ -1,4 +1,6 @@
-"use strict"
+"use strict";
+const section = document.createElement("section");
+section.className = "wrapper";
 
 
 /* ========APPLY THE CSS==WITH JAVASCRIPT==========*/
@@ -59,7 +61,7 @@ styleElement.innerHTML = ` body {
   
   .container .clip:hover {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  }`
+  }`;
 
 /*==Step 3: Append Style Element to Head==*/
 document.head.appendChild(styleElement);
