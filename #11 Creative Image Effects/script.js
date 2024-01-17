@@ -1,41 +1,45 @@
 "use strict";
-//Create the section for conataining the Div with the image card.
-const mainSection = document.createElement("section");
-mainSection.className = "card";
-document.body.appendChild(mainSection);
+function createCard() {
+  //Create the section for conataining the Div with the image card.
+  const mainSection = document.createElement("section");
+  mainSection.className = "card";
 
-//Create the Div that contains the actual Image
+  //Create the Div that contains the actual Image
 
-const divElement = document.createElement("div");
-divElement.className = "img-container";
-mainSection.appendChild(divElement);
+  const divElement = document.createElement("div");
+  divElement.className = "img-container";
 
-//Cretae the Image Element and append it to the Div
-const imageElement = document.createElement("img");
-imageElement.src = "./image/black-woman-model-with-tropical-leaf-head.jpg";
-divElement.appendChild(imageElement);
+  //Cretae the Image Element and append it to the Div
+  const imageElement = document.createElement("img");
+  imageElement.src = "./image/black-woman-model-with-tropical-leaf-head.jpg";
+  divElement.appendChild(imageElement);
 
-//Create the Second section that contains the content and append it to the main Section.
-const secondSection = document.createElement("section");
-secondSection.className = "content";
-mainSection.appendChild(secondSection);
+  //Create the Second section that contains the content and append it to the main Section.
+  const secondSection = document.createElement("section");
+  secondSection.className = "content";
 
-//Create and append the Header 3 Element to the second cection element
-const header3 = document.createElement("h3");
-header3.textContent = "Card Title";
-secondSection.appendChild(header3);
+  //Create and append the Header 3 Element to the second cection element
+  const header3 = document.createElement("h3");
+  header3.textContent = "Card Title";
+  secondSection.appendChild(header3);
 
-//Create and append the Paragraph Element to the second section element
-const paragraphTag = document.createElement("p");
-paragraphTag.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut remnesciunt illo veniam mollitia harum ea.";
-secondSection.appendChild(paragraphTag);
+  //Create and append the Paragraph Element to the second section element
+  const paragraphTag = document.createElement("p");
+  paragraphTag.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut remnesciunt illo veniam mollitia harum ea.";
+  secondSection.appendChild(paragraphTag);
 
-//Create and append the Anchor Tag Element to the second section element
-const anchorTag = document.createElement("a");
-anchorTag.href = "";
-anchorTag.textContent = "Learn More";
-secondSection.appendChild(anchorTag);
+  //Create and append the Anchor Tag Element to the second section element
+  const anchorTag = document.createElement("a");
+  anchorTag.href = "";
+  anchorTag.textContent = "Learn More";
+  secondSection.appendChild(anchorTag);
 
+  mainSection.appendChild(divElement);
+  mainSection.appendChild(secondSection);
+  document.body.appendChild(mainSection);
+}
+createCard();
+///////////////////////////////////////////////////////////////////////////////////
 //Apply the CSS style element to the JavaScript code.
 
 const styleElement = document.createElement("style");
@@ -143,5 +147,5 @@ body {
   .card:hover img {
     opacity: 0;
   }
-`
+`;
 document.head.appendChild(styleElement);
