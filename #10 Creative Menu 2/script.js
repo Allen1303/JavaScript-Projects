@@ -56,7 +56,7 @@ styleElement.innerHTML = `
     display: block;
     padding: 15px 30px;
     text-decoration: none;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     color: #000;
     font-size: 22px;
     font-weight: bold;
