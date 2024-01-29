@@ -53,7 +53,7 @@ const themeToggler = document.getElementById("theme-toggler");
 const body = document.body;
 
 // Async Function to fetch th Wikipedia search results
-async function searchWikipeida(query) {
+async function searchWikipedia(query) {
   // Encode the search query to make it URL-safe
   const encodedQuery = encodeURIComponent(query);
   // Construct the Wikipedia API endpoint with the encoded query
@@ -111,8 +111,8 @@ searchForm.addEventListener("submit", async (e) => {
   // Display a loading message while fetching search results
   searchResults.innerHTML = "<div class='spinner'>Loading...</div>";
   try {
-    // Fetch search results using the searchWikipeida function
-    const results = await searchWikipeida(query);
+    // Fetch search results using the searchWikipedia function
+    const results = await searchWikipedia(query);
     // Check if there are no search results
     if (results.query.searchinfo.totalhits === 0) {
       // Display a message if no results are found
