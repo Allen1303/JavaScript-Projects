@@ -1,0 +1,140 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wiki Clone</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-container">
+        <h1>Search Wikipedia</h1>
+        <span id="theme-toggler">Light</span>
+      </div>
+
+      <form id="search-form">
+        <input type="text" id="search-input" placeholder="Enter search term" />
+        <button type="submit">Search</button>
+      </form>
+
+      <div id="search-results"></div>
+    </div>
+
+    <script>
+
+      // Get the search form, input, and results elements by their IDs
+const searchForm = document.getElementById("search-form");
+const searchInput = document.getElementById("search-input");
+const searchResults = document.getElementById("search-results");
+
+// Theme toggler elements
+const themeToggler = document.getElementById("theme-toggler");
+const body = document.body;
+
+// Async function to fetch Wikipedia search results
+async function searchWikipeida(query) {
+  // Encode the search query to make it URL-safe
+  const encodedQuery = encodeURIComponent(query);
+  
+  // Construct the Wikipedia API endpoint with the encoded query
+  const endpoint = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=10&srsearch=${encodedQuery}`;
+
+  // Fetch data from the Wikipedia API
+  const response = await fetch(endpoint);
+
+  // Check if the fetch was successful
+  if (!response.ok) {
+    throw new Error("Failed to fetch search results from Wikipedia API.");
+  }
+
+  // Parse the response as JSON and return it
+  const json = await response.json();
+  return json;
+}
+
+// Function to display search results on the page
+function displayResults(results) {
+  // Remove any existing content in the search results container
+  searchResults.innerHTML = "";
+
+  // Iterate through each search result and create HTML elements
+  results.forEach((result) => {
+    // Generate the URL for the search result
+    const url = `https://en.wikipedia.org/?curid=${result.pageid}`;
+    
+    // Create HTML elements for title and URL links
+    const titleLink = `<a href="${url}" target="_blank" rel="noopener">${result.title} </a>`;
+    const urlLink = `<a href="${url}" class="result-link" target="_blank" rel="noopener">${url}</a>`;
+
+    // Create a new div element for each search result
+    const resultItem = document.createElement("div");
+    resultItem.className = "result-item";
+    resultItem.innerHTML = `
+        <h3 class="result-title">${titleLink}</h3>
+        ${urlLink}
+        <p class="result-snippet">${result.snippet}</p>
+        `;
+
+    // Append the result item to the search results container
+    searchResults.appendChild(resultItem);
+  });
+}
+
+// Event listener for the search form submission
+searchForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  // Get the trimmed value of the search input
+  const query = searchInput.value.trim();
+
+  // Check if the query is empty
+  if (!query) {
+    // Display a message if the search input is empty
+    searchResults.innerHTML = "<p>Please enter a valid search term. </p>";
+    return;
+  }
+
+  // Display a loading message while fetching search results
+  searchResults.innerHTML = "<div class='spinner'>Loading ... </div>";
+
+  try {
+    // Fetch search results using the searchWikipeida function
+    const results = await searchWikipeida(query);
+
+    // Check if there are no search results
+    if (results.query.searchinfo.totalhits === 0) {
+      // Display a message if no results are found
+      searchResults.innerHTML = "<p>No results found. </p>";
+    } else {
+      // Display the search results on the page
+      displayResults(results.query.search);
+    }
+  } catch (error) {
+    // Log any errors to the console and display an error message
+    console.error(error);
+    searchResults.innerHTML = `<p>An error occurred while searching. Please try again later. </p>`;
+  }
+});
+
+// Event listener for the theme toggler button
+themeToggler.addEventListener("click", () => {
+  // Toggle the "dark-theme" class on the body element
+  body.classList.toggle("dark-theme");
+
+  // Adjust the theme toggler button text and styles based on the theme
+  if (body.classList.contains("dark-theme")) {
+    // Change button text and styles for dark theme
+    themeToggler.textContent = "Dark";
+    themeToggler.style.background = "#fff";
+    themeToggler.style.color = "#333";
+  } else {
+    // Change button text and styles for light theme
+    themeToggler.textContent = "Light";
+    themeToggler.style.border = "2px solid #ccc";
+    themeToggler.style.color = "#333";
+  }
+});
+
+    </script>
+  </body>
+</html>
