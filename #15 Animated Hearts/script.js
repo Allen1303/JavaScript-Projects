@@ -21,6 +21,7 @@ grayHeart.addEventListener("click", function () {
 redHeart.addEventListener("click", function () {
   redHeart.classList.add("animation");
   grayHeart.classList.remove("fill-color");
+
 });
 
 /*Create the style Elements and append it to the Document using JavaScript only */
